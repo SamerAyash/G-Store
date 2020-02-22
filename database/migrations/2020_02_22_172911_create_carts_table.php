@@ -18,8 +18,8 @@ class CreateCartsTable extends Migration
             $table->date('added_date');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
-            $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('users');
+            $table->unsignedBigInteger('buyer_id');
+            $table->foreign('buyer_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

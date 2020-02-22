@@ -19,6 +19,8 @@ class CreateOffersTable extends Migration
             $table->integer('duration');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
+            $table->unsignedBigInteger('buyer_id');
+            $table->foreign('buyer_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
