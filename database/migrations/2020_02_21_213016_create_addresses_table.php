@@ -18,7 +18,7 @@ class CreateAddressesTable extends Migration
             $table->string('city');
             $table->string('area');
             $table->string('street');
-            $table->string('zip');
+            $table->string('buildingNumber');
             $table->timestamps();
         });
     }

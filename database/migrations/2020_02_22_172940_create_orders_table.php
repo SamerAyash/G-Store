@@ -28,6 +28,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('buyer_id')->references('id')->on('users');
             $table->unsignedBigInteger('delivery_id');
             $table->foreign('delivery_id')->references('id')->on('admins');
+            $table->string('notes')->nullable();
             $table->timestamps();
         });
     }
