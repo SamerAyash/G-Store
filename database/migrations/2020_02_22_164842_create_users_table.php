@@ -31,6 +31,7 @@ class CreateUsersTable extends Migration
             $table->float('totalAmount')->default(0.0);
             $table->string('notes')->nullable();
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

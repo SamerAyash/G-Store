@@ -32,12 +32,13 @@ class AdminController extends Controller
      */
     public function getSupervisors()
     {
-        $supervisors =Admin::where('type','=','supervisor')
+        $supervisors=Admin::find(2)->with('permissions');
+        /*$supervisors =Admin::where('type','=','supervisor')
             ->join('addresses','admins.address_id','=','addresses.id')
             ->select(['admins.id','name','email','id_number','phone','image','addresses.city','addresses.area',
                 'addresses.street','addresses.buildingNumber','birthDate','notes','admins.created_at','admins.updated_at'])
             ->orderBy('created_at', 'desc')
-            ->paginate(15);
+            ->paginate(15);*/
         return response($supervisors);
     }
 

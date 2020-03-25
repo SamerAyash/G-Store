@@ -3,13 +3,12 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
 class User extends Authenticatable
 {
-    use Notifiable;
-
+    use Notifiable,SoftDeletes;
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -41,7 +40,10 @@ class User extends Authenticatable
         return $this->hasMany('App/Offer');
     }
     public function category(){
-        return $this->belongsToMany('App/Category','SellerCategory');
+        return $this->belongsToMany('App/Category','seller_categories');
+    }
+    public function permissions(){
+        return $this->belongsToMany('App/Permission','model_has_permissions','user_id','permission_id');
     }
     public function order(){
         return $this->hasMany('App/Order');

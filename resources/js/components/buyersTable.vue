@@ -71,7 +71,7 @@
                         <h2>Are you sure delete ?</h2> Name: {{buyerO.name}}, Email: {{buyerO.email}}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" @click="buyerO={}" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button  @click="deleteBuyer(buyerO.id)" class="btn btn-danger">I'am sure, Delete</button>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                         </div>
 
                     <div class="modal-footer">
-                        <button type="button" @click="buyerO={}" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button  type="submit" class="btn btn-success">Update</button>
                     </div>
                     </form>
@@ -239,7 +239,6 @@
                                 'success',
                                 'The buyer [ '+this.buyerO.name+' ] was deleted',
                                 'Delete successfully');
-                            this.buyerO=[];
                         })
                         .catch(err => {
                             this.makeToast(
@@ -275,7 +274,6 @@
                             'success',
                             'The buyer was updated',
                             'Update successfully');
-                        this.buyerO=[];
                     })
                     .catch(err => {
                         if (err.response.status == 422){

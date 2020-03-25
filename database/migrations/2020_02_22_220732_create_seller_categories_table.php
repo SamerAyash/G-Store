@@ -15,7 +15,7 @@ class CreateSellerCategoriesTable extends Migration
     {
         Schema::create('seller_categories', function (Blueprint $table) {
             $table->unsignedBigInteger('seller_id');
-            $table->foreign('seller_id')->references('id')->on('users');
+            $table->foreign('seller_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();

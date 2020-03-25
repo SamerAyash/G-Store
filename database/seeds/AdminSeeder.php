@@ -1,7 +1,10 @@
 <?php
 use \Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
-
+use App\Admin;
+use App\address;
+use App\Model_has_permission;
+use App\Permission;
 class AdminSeeder extends Seeder
 {
     /**
@@ -11,21 +14,76 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i< 10 ;$i++){
             $faker =\Faker\Factory::create();
-            factory(App\Admin::class)->create(
+            $admin=Admin::create(
                 [
-                    'name' => $faker->name,
-                    'id_number'=>$faker->randomDigit,
-                    'email' => $faker->unique()->safeEmail,
+                    'name' =>'Samer Ayash',
+                    'id_number'=>$faker->randomNumber,
+                    'email' => 'sam@gmail.com',
                     'password' => Hash::make('12345678'), // password
-                    'phone'=>strval($faker->randomDigit),
-                    'address_id'=> \App\address::inRandomOrder()->first()->id,
+                    'phone'=>$faker->randomNumber,
+                    'address_id'=> address::inRandomOrder()->first()->id,
                     'birthDate'=>$faker->date(),
-                    'type'=>$faker->randomElement(['superAdmin','supervisor','delivery']),
+                    'type'=>'superAdmin',
                     'remember_token' => \Illuminate\Support\Str::random(10),
                 ]
             );
+        $permissions=['manage orders','manage customers','manage products',
+            'product reviews','offer reviews','manage coupons','manage offers'];
+        foreach ($permissions as $permission){
+            $per =Permission::where('name',$permission)->get()->first();
+            Model_has_permission::create([
+                'admin_id'=>$admin->id,
+                'permission_id'=>$per->id
+            ]);
+        }
+
+        for ($i=0; $i< 25 ;$i++){
+            $faker =\Faker\Factory::create();
+            $supervisor=Admin::create(
+                [
+                    'name' => $faker->name,
+                    'id_number'=>$faker->randomNumber,
+                    'email' => $faker->unique()->safeEmail,
+                    'password' => Hash::make('12345678'), // password
+                    'phone'=>$faker->randomNumber,
+                    'address_id'=> address::inRandomOrder()->first()->id,
+                    'birthDate'=>$faker->date(),
+                    'type'=>'supervisor',
+                    'remember_token' => \Illuminate\Support\Str::random(10),
+                ]
+            );
+            $permissions=['manage orders','manage customers','product reviews',
+                            'offer reviews','manage offers','manage products'];
+            foreach ($permissions as $permission){
+                $per =Permission::where('name',$permission)->get()->first();
+                Model_has_permission::create([
+                    'admin_id'=>$supervisor->id,
+                    'permission_id'=>$per->id
+                ]);
+            }
+        }
+
+        for ($i=0; $i< 20 ;$i++){
+            $faker =\Faker\Factory::create();
+            $delivery=Admin::create(
+                [
+                    'name' => $faker->name,
+                    'id_number'=>$faker->randomNumber,
+                    'email' => $faker->unique()->safeEmail,
+                    'password' => Hash::make('12345678'), // password
+                    'phone'=>$faker->randomNumber,
+                    'address_id'=> address::inRandomOrder()->first()->id,
+                    'birthDate'=>$faker->date(),
+                    'type'=>'delivery',
+                    'remember_token' => \Illuminate\Support\Str::random(10),
+                ]
+            );
+            $per =Permission::where('name','active')->get()->first();
+            Model_has_permission::create([
+                'admin_id'=>$delivery->id,
+                'permission_id'=>$per->id
+            ]);
         }
     }
 }

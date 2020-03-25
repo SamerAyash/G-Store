@@ -25,7 +25,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->unsignedBigInteger('buyer_id');
-            $table->foreign('buyer_id')->references('id')->on('users');
+            $table->foreign('buyer_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('delivery_id');
             $table->foreign('delivery_id')->references('id')->on('admins');
             $table->string('notes')->nullable();

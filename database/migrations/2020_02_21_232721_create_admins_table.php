@@ -27,6 +27,7 @@ class CreateAdminsTable extends Migration
             $table->enum('type',['superAdmin','supervisor','delivery']);
             $table->string('notes')->nullable();
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -2151,8 +2151,6 @@ __webpack_require__.r(__webpack_exports__);
         $('.modal-backdrop').remove();
 
         _this2.makeToast('success', 'The buyer [ ' + _this2.buyerO.name + ' ] was deleted', 'Delete successfully');
-
-        _this2.buyerO = [];
       })["catch"](function (err) {
         _this2.makeToast('danger', 'An error occurred, process did not complete', '');
 
@@ -2185,8 +2183,6 @@ __webpack_require__.r(__webpack_exports__);
         $('.modal-backdrop').remove();
 
         _this3.makeToast('success', 'The buyer was updated', 'Update successfully');
-
-        _this3.buyerO = [];
       })["catch"](function (err) {
         if (err.response.status == 422) {
           _this3.errors = err.response.data.errors;
@@ -2857,8 +2853,6 @@ __webpack_require__.r(__webpack_exports__);
         $('.modal-backdrop').remove();
 
         _this2.makeToast('success', 'The seller [ ' + _this2.sellerO.name + ' ] was deleted', 'Delete successfully');
-
-        _this2.sellerO = [];
       })["catch"](function (err) {
         _this2.makeToast('danger', 'An error occurred, process did not complete', '');
 
@@ -2893,8 +2887,6 @@ __webpack_require__.r(__webpack_exports__);
         $('.modal-backdrop').remove();
 
         _this3.makeToast('success', 'The seller was updated', 'Update successfully');
-
-        _this3.sellerO = [];
       })["catch"](function (err) {
         if (err.response.status == 422) {
           _this3.errors = err.response.data.errors;
@@ -77067,12 +77059,7 @@ var render = function() {
                   "button",
                   {
                     staticClass: "btn btn-secondary",
-                    attrs: { type: "button", "data-dismiss": "modal" },
-                    on: {
-                      click: function($event) {
-                        _vm.buyerO = {}
-                      }
-                    }
+                    attrs: { type: "button", "data-dismiss": "modal" }
                   },
                   [_vm._v("Close")]
                 ),
@@ -77531,30 +77518,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "modal-footer" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-secondary",
-                      attrs: { type: "button", "data-dismiss": "modal" },
-                      on: {
-                        click: function($event) {
-                          _vm.buyerO = {}
-                        }
-                      }
-                    },
-                    [_vm._v("Close")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success",
-                      attrs: { type: "submit" }
-                    },
-                    [_vm._v("Update")]
-                  )
-                ])
+                _vm._m(1)
               ]
             )
           ])
@@ -77590,6 +77554,27 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-success", attrs: { type: "submit" } },
+        [_vm._v("Update")]
+      )
     ])
   }
 ]
@@ -78926,12 +78911,7 @@ var render = function() {
                   "button",
                   {
                     staticClass: "btn btn-secondary",
-                    attrs: { type: "button", "data-dismiss": "modal" },
-                    on: {
-                      click: function($event) {
-                        _vm.sellerO = {}
-                      }
-                    }
+                    attrs: { type: "button", "data-dismiss": "modal" }
                   },
                   [_vm._v("Close")]
                 ),
@@ -79457,30 +79437,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "modal-footer" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-secondary",
-                      attrs: { type: "button", "data-dismiss": "modal" },
-                      on: {
-                        click: function($event) {
-                          _vm.sellerO = {}
-                        }
-                      }
-                    },
-                    [_vm._v("Close")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success",
-                      attrs: { type: "submit" }
-                    },
-                    [_vm._v("Update")]
-                  )
-                ])
+                _vm._m(1)
               ]
             )
           ])
@@ -79524,6 +79481,27 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Updated at")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-success", attrs: { type: "submit" } },
+        [_vm._v("Update")]
+      )
     ])
   }
 ]
