@@ -6,11 +6,13 @@
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <router-link class="nav-item nav-link"  :to="{name:'buyersTable'}" exact-active-class="active">Buyers</router-link>
                 <router-link class="nav-item nav-link" :to="{name:'sellersTable'}" exact-active-class="active">Sellers</router-link>
-                <router-link class="nav-item nav-link" :to="{name:'supervisorsTable'}" exact-active-class="active">Supervisors</router-link>
-                <router-link class="nav-item nav-link"  :to="{name:'deliverysTable'}" exact-active-class="active">Delivery</router-link>
+                @if(Auth::guard('admin')->user()->type == 'superAdmin')
+                    <router-link class="nav-item nav-link" :to="{name:'supervisorsTable'}" exact-active-class="active">Supervisors</router-link>
+                    <router-link class="nav-item nav-link"  :to="{name:'deliverysTable'}" exact-active-class="active">Delivery</router-link>
+                @endif
             </div>
         </nav>
-        <div class="">
+        <div>
             <router-view></router-view>
         </div>
     </div>

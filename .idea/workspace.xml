@@ -2,38 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="495c1560-5319-4f47-84ad-e7d02e13a518" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model_has_permission.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Permission.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/permission.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_24_155650_create_permissions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_24_160438_create_model_has_permissions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/CategoriesAndSubcategories.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/PermissionSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/G-Store.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/G-Store.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckPermission.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_21_232721_create_admins_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_21_232721_create_admins_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_164842_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_164842_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_171846_create_sub_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_171846_create_sub_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_172717_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_172717_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_172755_create_product_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_172755_create_product_images_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_172835_create_offers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_172835_create_offers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_172911_create_carts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_172911_create_carts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_172940_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_172940_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_220732_create_seller_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_220732_create_seller_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/AdminSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AdminSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SubCategorySeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/buyersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/buyersTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/sellersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/sellersTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/deliveryTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/deliveryTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/supervisorsTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/supervisorsTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/acountsTable.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/acountsTable.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/adminweb.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/adminweb.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,6 +218,21 @@
       <workItem from="1585010698295" duration="36000" />
       <workItem from="1585054176382" duration="6462000" />
       <workItem from="1585144962079" duration="10636000" />
+      <workItem from="1585158286889" duration="3134000" />
+      <workItem from="1585165969048" duration="2781000" />
+      <workItem from="1585223203712" duration="1887000" />
+      <workItem from="1585225475886" duration="9960000" />
+      <workItem from="1585322902512" duration="1584000" />
+      <workItem from="1585347174239" duration="7000" />
+      <workItem from="1585352390275" duration="3796000" />
+      <workItem from="1585399570392" duration="4142000" />
+      <workItem from="1585406011688" duration="7681000" />
+      <workItem from="1585441795681" duration="1479000" />
+      <workItem from="1585443941964" duration="107000" />
+      <workItem from="1585444631221" duration="5137000" />
+      <workItem from="1585453432171" duration="1103000" />
+      <workItem from="1585489798389" duration="483000" />
+      <workItem from="1585490490485" duration="9306000" />
     </task>
     <servers />
   </component>

@@ -2487,7 +2487,7 @@ __webpack_require__.r(__webpack_exports__);
 
         _this2.makeToast('success', 'The delivery [ ' + _this2.deliveryO.name + ' ] was deleted', 'Delete successfully');
 
-        _this2.deliveryO = [];
+        _this2.deliveryO = {};
       })["catch"](function (err) {
         _this2.makeToast('danger', 'An error occurred, process did not complete', '');
 
@@ -2520,7 +2520,7 @@ __webpack_require__.r(__webpack_exports__);
 
         _this3.makeToast('success', 'The delivery was updated', 'Update successfully');
 
-        _this3.deliveryO = [];
+        _this3.deliveryO = {};
       })["catch"](function (err) {
         if (err.response.status == 422) {
           _this3.errors = err.response.data.errors;
@@ -2540,7 +2540,7 @@ __webpack_require__.r(__webpack_exports__);
         _this4.makeToast('success', 'The delivery was added', 'Add successfully');
 
         _this4.edit = false;
-        _this4.deliveryO = [];
+        _this4.deliveryO = {};
       })["catch"](function (err) {
         if (err.response.status == 422) {
           _this4.errors = err.response.data.errors;
@@ -3121,6 +3121,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "supervisorsTable",
   data: function data() {
@@ -3139,7 +3163,13 @@ __webpack_require__.r(__webpack_exports__);
         birthDate: '',
         notes: '',
         password: '',
-        password_confirmation: ''
+        password_confirmation: '',
+        manageOrders: '',
+        manageCustomers: '',
+        manageProducts: '',
+        manageOffers: '',
+        productReviews: '',
+        offerReviews: ''
       },
       errors: [],
       pagination: {},
@@ -3191,7 +3221,7 @@ __webpack_require__.r(__webpack_exports__);
 
         _this2.makeToast('success', 'The supervisor [ ' + _this2.supervisorO.name + ' ] was deleted', 'Delete successfully');
 
-        _this2.supervisorO = [];
+        _this2.supervisorO = {};
       })["catch"](function (err) {
         _this2.makeToast('danger', 'An error occurred, process did not complete', '');
 
@@ -3211,6 +3241,36 @@ __webpack_require__.r(__webpack_exports__);
       this.supervisorO.area = supervisor.area;
       this.supervisorO.street = supervisor.street;
       this.supervisorO.buildingNumber = supervisor.buildingNumber;
+      this.supervisorO.manageOrders = supervisor.permissions.filter(function (el) {
+        return el.name === 'manage orders';
+      }).map(function (x) {
+        return x.name;
+      }) == 'manage orders' ? 'manage orders' : false;
+      this.supervisorO.manageCustomers = supervisor.permissions.filter(function (el) {
+        return el.name === 'manage customers';
+      }).map(function (x) {
+        return x.name;
+      }) == 'manage customers' ? 'manage customers' : false;
+      this.supervisorO.manageProducts = supervisor.permissions.filter(function (el) {
+        return el.name === 'manage products';
+      }).map(function (x) {
+        return x.name;
+      }) == 'manage products' ? 'manage products' : false;
+      this.supervisorO.manageOffers = supervisor.permissions.filter(function (el) {
+        return el.name === 'manage offers';
+      }).map(function (x) {
+        return x.name;
+      }) == 'manage offers' ? 'manage offers' : false;
+      this.supervisorO.productReviews = supervisor.permissions.filter(function (el) {
+        return el.name === 'product reviews';
+      }).map(function (x) {
+        return x.name;
+      }) == 'product reviews' ? 'product reviews' : false;
+      this.supervisorO.offerReviews = supervisor.permissions.filter(function (el) {
+        return el.name === 'offer reviews';
+      }).map(function (x) {
+        return x.name;
+      }) == 'offer reviews' ? 'offer reviews' : false;
     },
     updatSupervisor: function updatSupervisor(id) {
       var _this3 = this;
@@ -3224,7 +3284,8 @@ __webpack_require__.r(__webpack_exports__);
 
         _this3.makeToast('success', 'The supervisor was updated', 'Update successfully');
 
-        _this3.supervisorO = [];
+        console.log(data);
+        _this3.supervisorO = {};
       })["catch"](function (err) {
         if (err.response.status == 422) {
           _this3.errors = err.response.data.errors;
@@ -3244,7 +3305,7 @@ __webpack_require__.r(__webpack_exports__);
         _this4.makeToast('success', 'The supervisor was added', 'Add successfully');
 
         _this4.edit = false;
-        _this4.supervisorO = [];
+        _this4.supervisorO = {};
       })["catch"](function (err) {
         if (err.response.status == 422) {
           _this4.errors = err.response.data.errors;
@@ -77931,7 +77992,7 @@ var render = function() {
                     attrs: { type: "button", "data-dismiss": "modal" },
                     on: {
                       click: function($event) {
-                        this.deliveryO = []
+                        this.deliveryO = {}
                       }
                     }
                   },
@@ -79759,6 +79820,20 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
+            _c(
+              "td",
+              _vm._l(supervisor.permissions, function(permission) {
+                return _c("p", { key: permission.name }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(permission.name) +
+                      "\n                    "
+                  )
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
             _c("td", [_vm._v(_vm._s(supervisor.birthDate))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(supervisor.notes))]),
@@ -79858,7 +79933,7 @@ var render = function() {
                     attrs: { type: "button", "data-dismiss": "modal" },
                     on: {
                       click: function($event) {
-                        _vm.supervisorO = []
+                        _vm.supervisorO = {}
                       }
                     }
                   },
@@ -80014,83 +80089,89 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col" }, [
                   _c("div", { staticClass: "row" }, [
-                    _c("label", [
-                      _vm._v(
-                        "Phone (059|056).xxxxxxx\n                                "
-                      ),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.supervisorO.phone,
-                            expression: "supervisorO.phone"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text", placeholder: "Phone" },
-                        domProps: { value: _vm.supervisorO.phone },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                    _c("div", { staticClass: "col" }, [
+                      _c("label", [
+                        _vm._v(
+                          "Phone (059|056).xxxxxxx\n                                        "
+                        ),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.supervisorO.phone,
+                              expression: "supervisorO.phone"
                             }
-                            _vm.$set(
-                              _vm.supervisorO,
-                              "phone",
-                              $event.target.value
-                            )
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", placeholder: "Phone" },
+                          domProps: { value: _vm.supervisorO.phone },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.supervisorO,
+                                "phone",
+                                $event.target.value
+                              )
+                            }
                           }
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _vm.errors.phone
-                      ? _c("div", { staticClass: "alert-danger" }, [
-                          _vm._v(_vm._s(_vm.errors.phone[0]))
-                        ])
-                      : _vm._e()
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _vm.errors.phone
+                        ? _c("div", { staticClass: "alert-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.phone[0]))
+                          ])
+                        : _vm._e()
+                    ])
                   ]),
                   _vm._v(" "),
                   !_vm.edit
                     ? _c("div", { staticClass: "row" }, [
-                        _c("label", [
-                          _vm._v("Password\n                                "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.supervisorO.password,
-                                expression: "supervisorO.password"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "password",
-                              placeholder: "Password"
-                            },
-                            domProps: { value: _vm.supervisorO.password },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                        _c("div", { staticClass: "col" }, [
+                          _c("label", [
+                            _vm._v(
+                              "Password\n                                        "
+                            ),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.supervisorO.password,
+                                  expression: "supervisorO.password"
                                 }
-                                _vm.$set(
-                                  _vm.supervisorO,
-                                  "password",
-                                  $event.target.value
-                                )
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "password",
+                                placeholder: "Password"
+                              },
+                              domProps: { value: _vm.supervisorO.password },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.supervisorO,
+                                    "password",
+                                    $event.target.value
+                                  )
+                                }
                               }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _vm.errors.password
-                          ? _c("div", { staticClass: "alert-danger" }, [
-                              _vm._v(_vm._s(_vm.errors.password[0]))
-                            ])
-                          : _vm._e()
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _vm.errors.password
+                            ? _c("div", { staticClass: "alert-danger" }, [
+                                _vm._v(_vm._s(_vm.errors.password[0]))
+                              ])
+                            : _vm._e()
+                        ])
                       ])
                     : _vm._e()
                 ]),
@@ -80098,7 +80179,9 @@ var render = function() {
                 _c("div", { staticClass: "col" }, [
                   _c("div", { staticClass: "row" }, [
                     _c("label", [
-                      _vm._v("Birth Date\n                                "),
+                      _vm._v(
+                        "Birth Date\n                                    "
+                      ),
                       _c("input", {
                         directives: [
                           {
@@ -80137,7 +80220,7 @@ var render = function() {
                     ? _c("div", { staticClass: "row" }, [
                         _c("label", [
                           _vm._v(
-                            "Password confirm\n                                "
+                            "Password confirm\n                                    "
                           ),
                           _c("input", {
                             directives: [
@@ -80363,6 +80446,116 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "col" },
+                  [
+                    _c("label", [_vm._v("Permissions:")]),
+                    _vm._v(" "),
+                    _c(
+                      "b-form-checkbox",
+                      {
+                        attrs: { value: "manage orders" },
+                        model: {
+                          value: _vm.supervisorO.manageOrders,
+                          callback: function($$v) {
+                            _vm.$set(_vm.supervisorO, "manageOrders", $$v)
+                          },
+                          expression: "supervisorO.manageOrders"
+                        }
+                      },
+                      [_vm._v("Manage Orders")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-form-checkbox",
+                      {
+                        attrs: { value: "manage customers" },
+                        model: {
+                          value: _vm.supervisorO.manageCustomers,
+                          callback: function($$v) {
+                            _vm.$set(_vm.supervisorO, "manageCustomers", $$v)
+                          },
+                          expression: "supervisorO.manageCustomers"
+                        }
+                      },
+                      [_vm._v("Manage Customers")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-form-checkbox",
+                      {
+                        attrs: { value: "manage products" },
+                        model: {
+                          value: _vm.supervisorO.manageProducts,
+                          callback: function($$v) {
+                            _vm.$set(_vm.supervisorO, "manageProducts", $$v)
+                          },
+                          expression: "supervisorO.manageProducts"
+                        }
+                      },
+                      [_vm._v("Manage Products")]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col" },
+                  [
+                    _c(
+                      "b-form-checkbox",
+                      {
+                        attrs: { value: "manage offers" },
+                        model: {
+                          value: _vm.supervisorO.manageOffers,
+                          callback: function($$v) {
+                            _vm.$set(_vm.supervisorO, "manageOffers", $$v)
+                          },
+                          expression: "supervisorO.manageOffers"
+                        }
+                      },
+                      [_vm._v("Manage Offers")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-form-checkbox",
+                      {
+                        attrs: { value: "product reviews" },
+                        model: {
+                          value: _vm.supervisorO.productReviews,
+                          callback: function($$v) {
+                            _vm.$set(_vm.supervisorO, "productReviews", $$v)
+                          },
+                          expression: "supervisorO.productReviews"
+                        }
+                      },
+                      [_vm._v("product Reviews")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-form-checkbox",
+                      {
+                        attrs: { value: "offer reviews" },
+                        model: {
+                          value: _vm.supervisorO.offerReviews,
+                          callback: function($$v) {
+                            _vm.$set(_vm.supervisorO, "offerReviews", $$v)
+                          },
+                          expression: "supervisorO.offerReviews"
+                        }
+                      },
+                      [_vm._v("Offer Reviews")]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
               _c("div", { staticClass: "modal-footer" }, [
                 _c(
                   "button",
@@ -80454,6 +80647,8 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Phone")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Address")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Permissions")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Birth Date")]),
         _vm._v(" "),

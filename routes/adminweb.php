@@ -12,16 +12,20 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     ///////////////////////////////////////////////////////////
     Route::group(['middleware'=>'admin:admin'],function (){
         /// First admin word means middleware class and second admin word means guard type
-        Route::resource('/','AdminController',[
-            'names'=>
-                [
-                    'index'=>'admin.acountsTable',
-                ]
+        Route::get('/',[
+            'as'=>'admin.acountsTable',
+            'uses'=>'AdminController@index',
+            'role'=>['superAdmin','supervisor'],
+            'permission'=>''
         ]);
         Route::get('/logout',['as'=>'admin.logout','uses'=>'AdminAuth@logout']);
-        Route::get('/home',['as'=>'admin.home','uses'=>'AdminAuth@index']);
-        Route::get('/sellers',['as'=>'admin.home1','uses'=>'UserController@getSellers']);
-        Route::get('/buyers',['as'=>'admin.home2','uses'=>'AdminController@getSupervisors']);
+        Route::get('/home',[
+            'as'=>'admin.home',
+            'middleware'=>'adminPermission',
+            'uses'=>'AdminAuth@index',
+            'role'=>['superAdmin','supervisor'],
+            'permission'=>''
+        ]);
     });
 
 

@@ -28,24 +28,24 @@ class User extends Authenticatable
     ];
 
     public function address(){
-        return $this->belongsTo('App/Address');
+        return $this->belongsTo('App\Address');
     }
     public function product(){
-        return $this->hasMany('App/Product');
+        return $this->hasMany('App\Product');
     }
     public function cart(){
-        return $this->hasMany('App/Cart');
+        return $this->hasMany('App\Cart');
     }
     public function offer(){
-        return $this->hasMany('App/Offer');
+        return $this->hasMany('App\Offer');
     }
     public function category(){
-        return $this->belongsToMany('App/Category','seller_categories');
+        return $this->belongsToMany('App\Category','seller_categories');
     }
     public function permissions(){
-        return $this->belongsToMany('App/Permission','model_has_permissions','user_id','permission_id');
+        return $this->belongsToMany('App\Permission','model_has_permissions','user_id','permission_id');
     }
     public function order(){
-        return $this->hasMany('App/Order');
+        return $this->hasMany('App\Order');
     }
 }

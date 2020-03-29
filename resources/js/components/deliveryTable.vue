@@ -73,7 +73,7 @@
                         <h2>Are you sure delete ?</h2> Name: {{deliveryO.name}}, Email: {{deliveryO.email}}
                     </div>
                     <div class="modal-footer">
-                        <button @click="this.deliveryO=[]" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button @click="this.deliveryO={}" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button  @click="deleteDelivery(deliveryO.id)" class="btn btn-danger">I'am sure, Delete</button>
                     </div>
                 </div>
@@ -249,7 +249,7 @@
                             'success',
                             'The delivery [ '+this.deliveryO.name+' ] was deleted',
                             'Delete successfully');
-                        this.deliveryO=[];
+                        this.deliveryO={};
                     })
                     .catch(err => {
                         this.makeToast(
@@ -284,7 +284,7 @@
                             'success',
                             'The delivery was updated',
                             'Update successfully');
-                        this.deliveryO=[];
+                        this.deliveryO={};
                     })
                     .catch(err => {
                         if (err.response.status == 422){
@@ -304,7 +304,7 @@
                             'The delivery was added',
                             'Add successfully');
                         this.edit=false;
-                        this.deliveryO=[];
+                        this.deliveryO={};
                     })
                     .catch(err => {
                         if (err.response.status == 422){

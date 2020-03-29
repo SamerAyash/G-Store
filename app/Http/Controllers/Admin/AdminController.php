@@ -6,6 +6,7 @@ use App\address;
 use App\Admin;
 use App\Http\Controllers\Controller;
 //use App\DataTables\AdminDataTable;
+use App\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpKernel\HttpCache\HttpCache;
@@ -32,13 +33,12 @@ class AdminController extends Controller
      */
     public function getSupervisors()
     {
-        $supervisors=Admin::find(2)->with('permissions');
-        /*$supervisors =Admin::where('type','=','supervisor')
+        $supervisors =Admin::with('permissions')->where('type','=','supervisor')
             ->join('addresses','admins.address_id','=','addresses.id')
             ->select(['admins.id','name','email','id_number','phone','image','addresses.city','addresses.area',
                 'addresses.street','addresses.buildingNumber','birthDate','notes','admins.created_at','admins.updated_at'])
             ->orderBy('created_at', 'desc')
-            ->paginate(15);*/
+            ->paginate(15);
         return response($supervisors);
     }
 
@@ -105,6 +105,25 @@ class AdminController extends Controller
         $supervisor->birthDate=$request->input('birthDate');
         $supervisor->notes=$request->input('notes');
         $supervisor->save();
+        $supervisor->permissions()->detach();
+        if ($request['manageOrders'] =='manage orders'){
+            $supervisor->permissions()->attach(Permission::where('name','manage orders')->first());
+        }
+        if ($request['manageCustomers'] =='manage customers'){
+            $supervisor->permissions()->attach(Permission::where('name','manage customers')->first());
+        }
+        if ($request['manageProducts'] =='manage products'){
+        $supervisor->permissions()->attach(Permission::where('name','manage products')->first());
+        }
+        if ($request['manageOffers'] =='manage offers'){
+        $supervisor->permissions()->attach(Permission::where('name','manage offers')->first());
+        }
+        if ($request['productReviews'] =='product reviews'){
+        $supervisor->permissions()->attach(Permission::where('name','product reviews')->first());
+        }
+        if ($request['offerReviews'] =='offer reviews'){
+        $supervisor->permissions()->attach(Permission::where('name','offer reviews')->first());
+        }
         return response(null,200);
     }
 

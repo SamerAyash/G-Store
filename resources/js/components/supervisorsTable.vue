@@ -32,6 +32,7 @@
                 <th scope="col">Id Number</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Address</th>
+                <th scope="col">Permissions</th>
                 <th scope="col">Birth Date</th>
                 <th scope="col">Notes</th>
                 <th scope="col">Action</th>
@@ -51,6 +52,11 @@
                 <td>{{supervisor.id_number}}</td>
                 <td>{{supervisor.phone}}</td>
                 <td>{{supervisor.city}}/{{supervisor.area}}/{{supervisor.street}}/{{supervisor.buildingNumber}}</td>
+                <td >
+                        <p v-for="permission in supervisor.permissions" :key="permission.name" >
+                            {{permission.name}}
+                        </p>
+                </td>
                 <td>{{supervisor.birthDate}}</td>
                 <td>{{supervisor.notes}}</td>
                 <td>
@@ -73,7 +79,7 @@
                         <h2>Are you sure delete ?</h2> Name: {{supervisorO.name}}, Email: {{supervisorO.email}}
                     </div>
                     <div class="modal-footer">
-                        <button @click="supervisorO=[]" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button @click="supervisorO={}" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button  @click="deleteSupervisor(supervisorO.id)" class="btn btn-danger">I'am sure, Delete</button>
                     </div>
                 </div>
@@ -106,32 +112,36 @@
                         <hr>
                         <div class="row">
                             <div class="col">
-                            <div class="row">
-                                <label>Phone (059|056).xxxxxxx
-                                    <input type="text" class="form-control" placeholder="Phone" v-model="supervisorO.phone">
-                                </label>
-                                <div v-if="errors.phone" class="alert-danger">{{errors.phone[0]}}</div>
-                            </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label>Phone (059|056).xxxxxxx
+                                            <input type="text" class="form-control" placeholder="Phone" v-model="supervisorO.phone">
+                                        </label>
+                                        <div v-if="errors.phone" class="alert-danger">{{errors.phone[0]}}</div>
+                                    </div>
+                                </div>
                                 <div class="row" v-if="!edit">
-                                <label>Password
-                                    <input type="password" class="form-control" placeholder="Password" v-model="supervisorO.password">
-                                </label>
-                                <div v-if="errors.password" class="alert-danger">{{errors.password[0]}}</div>
+                                    <div class="col">
+                                        <label>Password
+                                            <input type="password" class="form-control" placeholder="Password" v-model="supervisorO.password">
+                                        </label>
+                                        <div v-if="errors.password" class="alert-danger">{{errors.password[0]}}</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col">
-                            <div class="row">
-                                <label>Birth Date
-                                    <input type="date" class="form-control" placeholder="Birth Date" v-model="supervisorO.birthDate">
-                                </label>
-                                <div v-if="errors.birthDate" class="alert-danger">{{errors.birthDate[0]}}</div>
-                            </div>
-                            <div class="row" v-if="!edit">
-                                <label>Password confirm
-                                    <input type="password" class="form-control" placeholder="Password confirm" v-model="supervisorO.password_confirmation">
-                                </label>
-                                <div v-if="errors.password_confirmation" class="alert-danger">{{errors.password_confirmation[0]}}</div>
-                            </div>
+                                <div class="row">
+                                    <label>Birth Date
+                                        <input type="date" class="form-control" placeholder="Birth Date" v-model="supervisorO.birthDate">
+                                    </label>
+                                    <div v-if="errors.birthDate" class="alert-danger">{{errors.birthDate[0]}}</div>
+                                </div>
+                                <div class="row" v-if="!edit">
+                                    <label>Password confirm
+                                        <input type="password" class="form-control" placeholder="Password confirm" v-model="supervisorO.password_confirmation">
+                                    </label>
+                                    <div v-if="errors.password_confirmation" class="alert-danger">{{errors.password_confirmation[0]}}</div>
+                                </div>
                             </div>
                             <div class="col">
                                 <label>Notes
@@ -167,6 +177,20 @@
                                 <div v-if="errors.buildingNumber" class="alert-danger">{{errors.buildingNumber[0]}}</div>
                             </div>
                         </div>
+                        <hr>
+                        <div class="row">
+                                    <div class="col">
+                                        <label>Permissions:</label>
+                                        <b-form-checkbox value="manage orders" v-model="supervisorO.manageOrders">Manage Orders</b-form-checkbox>
+                                        <b-form-checkbox value="manage customers" v-model="supervisorO.manageCustomers">Manage Customers</b-form-checkbox>
+                                        <b-form-checkbox value="manage products" v-model="supervisorO.manageProducts">Manage Products</b-form-checkbox>
+                                    </div>
+                                    <div class="col">
+                                        <b-form-checkbox value="manage offers" v-model="supervisorO.manageOffers">Manage Offers</b-form-checkbox>
+                                        <b-form-checkbox value="product reviews" v-model="supervisorO.productReviews">product Reviews</b-form-checkbox>
+                                        <b-form-checkbox value="offer reviews" v-model="supervisorO.offerReviews">Offer Reviews</b-form-checkbox>
+                                    </div>
+                        </div>
                         <div class="modal-footer">
                             <button @click="function(){supervisorO={};edit=false;errors=[]}" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button v-if="edit" @click="updatSupervisor(supervisorO.id)" type="button" class="btn btn-success">Update</button>
@@ -201,7 +225,14 @@
                     birthDate:'',
                     notes:'',
                     password:'',
-                    password_confirmation:''
+                    password_confirmation:'',
+                    manageOrders :'',
+                    manageCustomers :'',
+                    manageProducts :'',
+                    manageOffers :'',
+                    productReviews :'',
+                    offerReviews :'',
+
                 },
                 errors:[],
                 pagination: {},
@@ -224,6 +255,7 @@
                     .then(res => {
                         this.supervisors = res.data;
                         vm.makePagination(res);
+
                     })
                     .catch(err => console.log(err));
             },
@@ -249,7 +281,7 @@
                             'success',
                             'The supervisor [ '+this.supervisorO.name+' ] was deleted',
                             'Delete successfully');
-                        this.supervisorO=[];
+                        this.supervisorO={};
                     })
                     .catch(err => {
                         this.makeToast(
@@ -272,6 +304,13 @@
               this.supervisorO.area=supervisor.area;
               this.supervisorO.street=supervisor.street;
               this.supervisorO.buildingNumber=supervisor.buildingNumber;
+              this.supervisorO.manageOrders= supervisor.permissions.filter(el=>el.name ==='manage orders').map(x=>x.name) == 'manage orders'? 'manage orders':false ;
+              this.supervisorO.manageCustomers=supervisor.permissions.filter(el=>el.name ==='manage customers').map(x=>x.name) == 'manage customers'? 'manage customers':false ;
+              this.supervisorO.manageProducts=supervisor.permissions.filter(el=>el.name ==='manage products').map(x=>x.name) == 'manage products'? 'manage products':false ;
+              this.supervisorO.manageOffers=supervisor.permissions.filter(el=>el.name ==='manage offers').map(x=>x.name) == 'manage offers'? 'manage offers':false ;
+              this.supervisorO.productReviews=supervisor.permissions.filter(el=>el.name ==='product reviews').map(x=>x.name) == 'product reviews'? 'product reviews':false ;
+              this.supervisorO.offerReviews=supervisor.permissions.filter(el=>el.name ==='offer reviews').map(x=>x.name) == 'offer reviews'? 'offer reviews':false ;
+
             },
             updatSupervisor(id){
                 this.errors=[];
@@ -284,7 +323,8 @@
                             'success',
                             'The supervisor was updated',
                             'Update successfully');
-                        this.supervisorO=[];
+                        console.log(data);
+                        this.supervisorO={};
                     })
                     .catch(err => {
                         if (err.response.status == 422){
@@ -304,7 +344,7 @@
                             'The supervisor was added',
                             'Add successfully');
                             this.edit=false;
-                            this.supervisorO=[];
+                            this.supervisorO={};
                     })
                     .catch(err => {
                         if (err.response.status == 422){

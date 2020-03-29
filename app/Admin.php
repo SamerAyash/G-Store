@@ -11,7 +11,6 @@ class Admin extends Authenticatable
 {
     use Notifiable,SoftDeletes;
     protected $table ='admins';
-    protected $with='address';
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -31,7 +30,34 @@ class Admin extends Authenticatable
         return $this->hasMany('App\Order');
     }
     public function permissions(){
-        return $this->belongsToMany('App/Permission','model_has_permissions','admin_id','permission_id');
+        return $this->belongsToMany('App\Permission','model_has_permissions','admin_id','permission_id')->addSelect('name','permission_id');
+    }
+    public function hasAllPermissions($permissions){
+        if (is_array($permissions)){
+            $state=true;
+            foreach ($permissions as $permission){
+                if (!$this->hasPermission($permissions)){
+                    $state=false;
+                    break;
+                }
+                $state=true;
+            }
+            if ($state == true){
+                return true;
+            }
+        }
+        else{
+            if ($this->hasPermission($permissions)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public function hasPermission($permission){
+        if ($this->permissions()->where('name',$permission)->first()){
+            return true;
+        }
+        return false;
     }
 
 }
