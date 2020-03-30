@@ -64,17 +64,35 @@ class AdminController extends Controller
         $address->buildingNumber=$request->input('buildingNumber');
         $address->save();
 
-        $admin=new Admin();
-        $admin->name=$request->input('name');
-        $admin->email=$request->input('email');
-        $admin->password=Hash::make($request->input('password'));
-        $admin->phone=$request->input('phone');
-        $admin->address_id=$address->id;
-        $admin->id_number=$request->input('id_number');
-        $admin->birthDate=$request->input('birthDate');
-        $admin->type='supervisor';
-        $admin->notes=$request->input('notes');
-        $admin->save();
+        $supervisor=new Admin();
+        $supervisor->name=$request->input('name');
+        $supervisor->email=$request->input('email');
+        $supervisor->password=Hash::make($request->input('password'));
+        $supervisor->phone=$request->input('phone');
+        $supervisor->address_id=$address->id;
+        $supervisor->id_number=$request->input('id_number');
+        $supervisor->birthDate=$request->input('birthDate');
+        $supervisor->type='supervisor';
+        $supervisor->notes=$request->input('notes');
+        $supervisor->save();
+        if ($request['manageOrders'] =='manage orders'){
+            $supervisor->permissions()->attach(Permission::where('name','manage orders')->first());
+        }
+        if ($request['manageCustomers'] =='manage customers'){
+            $supervisor->permissions()->attach(Permission::where('name','manage customers')->first());
+        }
+        if ($request['manageProducts'] =='manage products'){
+            $supervisor->permissions()->attach(Permission::where('name','manage products')->first());
+        }
+        if ($request['manageOffers'] =='manage offers'){
+            $supervisor->permissions()->attach(Permission::where('name','manage offers')->first());
+        }
+        if ($request['productReviews'] =='product reviews'){
+            $supervisor->permissions()->attach(Permission::where('name','product reviews')->first());
+        }
+        if ($request['offerReviews'] =='offer reviews'){
+            $supervisor->permissions()->attach(Permission::where('name','offer reviews')->first());
+        }
         return response(null,200);
     }
     public function updateSupervisor(Request $request, $id)
@@ -129,7 +147,7 @@ class AdminController extends Controller
 
     public function getDelivery()
     {
-        $supervisors =Admin::where('type','=','delivery')
+        $supervisors =Admin::with('permissions')->where('type','=','delivery')
             ->join('addresses','admins.address_id','=','addresses.id')
             ->select(['admins.id','name','email','id_number','phone','image','addresses.city','addresses.area',
                 'addresses.street','addresses.buildingNumber','birthDate','notes','admins.created_at','admins.updated_at'])
@@ -171,6 +189,9 @@ class AdminController extends Controller
         $delivery->type='delivery';
         $delivery->notes=$request->input('notes');
         $delivery->save();
+        if ($request['active'] == 'active'){
+            $delivery->permissions()->attach(Permission::where('name','active')->first());
+        }
         return response(null,200);
     }
     public function updateDelivery(Request $request, $id)
@@ -201,6 +222,11 @@ class AdminController extends Controller
         $delivery->birthDate=$request->input('birthDate');
         $delivery->notes=$request->input('notes');
         $delivery->save();
+        $delivery->permissions()->detach();
+        if ($request['active'] =='active'){
+            $delivery->permissions()->attach(Permission::where('name','active')->first());
+        }
+
         return response(null,200);
     }
     /**

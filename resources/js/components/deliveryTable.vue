@@ -15,7 +15,7 @@
             </div>
         </form>
         <hr>
-        <button type="button" class="btn btn-primary float-left" data-toggle="modal" data-target="#formModal"><i class="fas fa-plus"></i> Create delivery</button>
+        <button type="button" @click="edit =false,deliveryO={}" class="btn btn-primary float-left" data-toggle="modal" data-target="#formModal"><i class="fas fa-plus"></i> Create delivery</button>
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-end">
                 <li v-bind:class="[{disabled: !pagination.prev_page_url}]" class="page-item"><a class="page-link" href="#" @click="fetchDeliverys(pagination.prev_page_url)">Previous</a></li>
@@ -32,6 +32,7 @@
                 <th scope="col">Id Number</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Address</th>
+                <th scope="col">Permissions</th>
                 <th scope="col">Birth Date</th>
                 <th scope="col">Notes</th>
                 <th scope="col">Action</th>
@@ -51,6 +52,11 @@
                 <td>{{delivery.id_number}}</td>
                 <td>{{delivery.phone}}</td>
                 <td>{{delivery.city}}/{{delivery.area}}/{{delivery.street}}/{{delivery.buildingNumber}}</td>
+                <td >
+                    <p v-for="permission in delivery.permissions" :key="permission.name" >
+                        {{permission.name.replace(/^./, permission.name[0].toUpperCase())}}
+                    </p>
+                </td>
                 <td>{{delivery.birthDate}}</td>
                 <td>{{delivery.notes}}</td>
                 <td>
@@ -167,6 +173,13 @@
                                 <div v-if="errors.buildingNumber" class="alert-danger">{{errors.buildingNumber[0]}}</div>
                             </div>
                         </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Permissions:</label>
+                                    <b-form-checkbox value="active" v-model="deliveryO.active">Active</b-form-checkbox>
+                                </div>
+                            </div>
                         <div class="modal-footer">
                             <button @click="function(){deliveryO={};edit=false;errors=[]}" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button v-if="edit" @click="updatDelivery(deliveryO.id)" type="button" class="btn btn-success">Update</button>
@@ -201,7 +214,8 @@
                     birthDate:'',
                     notes:'',
                     password:'',
-                    password_confirmation:''
+                    password_confirmation:'',
+                    active:'',
                 },
                 errors:[],
                 pagination: {},
@@ -272,6 +286,7 @@
                 this.deliveryO.area=delivery.area;
                 this.deliveryO.street=delivery.street;
                 this.deliveryO.buildingNumber=delivery.buildingNumber;
+                this.deliveryO.active= delivery.permissions.filter(el=>el.name === 'active').map(el=>el.name) =='active'?'active':false;
             },
             updatDelivery(id){
                 this.errors=[];

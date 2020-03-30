@@ -175,6 +175,11 @@
                                     <textarea type="text" rows="4" cols="80" class="form-control" placeholder="Notes" v-model="sellerO.notes"></textarea >
                                 </label>
                             </div>
+                            <div class="col-3">
+                                <label>Permissions:</label>
+                                <b-form-checkbox value="manage products" v-model="sellerO.manageProducts">Manage Products</b-form-checkbox>
+                                <b-form-checkbox value="manage offers" v-model="sellerO.manageOffers">Manage Offers</b-form-checkbox>
+                            </div>
                         </div>
 
                         <div class="modal-footer">
@@ -212,6 +217,8 @@
                     productsCount:'',
                     totalAmount:'',
                     notes:'',
+                    manageProducts:'',
+                    manageOffers:''
                 },
                 errors:[],
                 pagination: {},
@@ -283,6 +290,8 @@
                     this.sellerO.productsCount=seller.productsCount;
                     this.sellerO.totalAmount=seller.totalAmount;
                     this.sellerO.notes=seller.notes;
+                    this.sellerO.manageProducts=seller.permissions.filter(el=>el.name === 'manage products').map(el=>el.name) == 'manage products'?'manage products':false;
+                    this.sellerO.manageOffers=seller.permissions.filter(el=>el.name === 'manage offers').map(el=>el.name) == 'manage offers'?'manage offers':false;
             },
             updatseller(id){
                 this.errors=[];

@@ -32,6 +32,7 @@
                 <th scope="col">Id Number</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Address</th>
+                <th scope="col">Permissions</th>
                 <th scope="col">Birth Date</th>
                 <th scope="col">Total Amount</th>
                 <th scope="col">Notes</th>
@@ -50,6 +51,11 @@
                 <td>{{buyer.id_number}}</td>
                 <td>{{buyer.phone}}</td>
                 <td>{{buyer.city}}/{{buyer.area}}/{{buyer.street}}/{{buyer.buildingNumber}}</td>
+                <td >
+                    <p v-for="permission in buyer.permissions" :key="permission.name" >
+                        {{permission.name.replace(/^./, permission.name[0].toUpperCase())}}
+                    </p>
+                </td>
                 <td>{{buyer.birthDate}}</td>
                 <td>{{buyer.totalAmount}}</td>
                 <td>{{buyer.notes}}</td>
@@ -157,6 +163,10 @@
                                     <textarea type="text" rows="4" cols="80" class="form-control" placeholder="Notes" v-model="buyerO.notes"></textarea >
                                 </label>
                             </div>
+                            <div class="col-3">
+                                <label>Permissions:</label>
+                                <b-form-checkbox value="active" v-model="buyerO.active">Active</b-form-checkbox>
+                            </div>
                         </div>
 
                     <div class="modal-footer">
@@ -192,6 +202,7 @@
                     birthDate:'',
                     totalAmount:'',
                     notes:'',
+                    active:'',
                 },
                 errors:[],
                 pagination: {},
@@ -261,6 +272,7 @@
                 this.buyerO.birthDate=buyer.birthDate;
                 this.buyerO.totalAmount=buyer.totalAmount;
                 this.buyerO.notes=buyer.notes;
+                this.buyerO.active=buyer.permissions.filter(el=>el.name === 'active').map(el=>el.name) == 'active'?'active':false;
             },
             updatBuyer(id){
                 this.errors=[];

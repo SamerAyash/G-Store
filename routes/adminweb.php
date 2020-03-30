@@ -15,8 +15,6 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
         Route::get('/',[
             'as'=>'admin.acountsTable',
             'uses'=>'AdminController@index',
-            'role'=>['superAdmin','supervisor'],
-            'permission'=>''
         ]);
         Route::get('/logout',['as'=>'admin.logout','uses'=>'AdminAuth@logout']);
         Route::get('/home',[

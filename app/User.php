@@ -43,7 +43,7 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Category','seller_categories');
     }
     public function permissions(){
-        return $this->belongsToMany('App\Permission','model_has_permissions','user_id','permission_id');
+        return $this->belongsToMany('App\Permission','model_has_permissions','user_id','permission_id')->addSelect('name','permission_id');
     }
     public function order(){
         return $this->hasMany('App\Order');

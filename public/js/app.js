@@ -2083,6 +2083,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "buyersTable",
   data: function data() {
@@ -2100,7 +2110,8 @@ __webpack_require__.r(__webpack_exports__);
         buildingNumber: '',
         birthDate: '',
         totalAmount: '',
-        notes: ''
+        notes: '',
+        active: ''
       },
       errors: [],
       pagination: {},
@@ -2170,6 +2181,11 @@ __webpack_require__.r(__webpack_exports__);
       this.buyerO.birthDate = buyer.birthDate;
       this.buyerO.totalAmount = buyer.totalAmount;
       this.buyerO.notes = buyer.notes;
+      this.buyerO.active = buyer.permissions.filter(function (el) {
+        return el.name === 'active';
+      }).map(function (el) {
+        return el.name;
+      }) == 'active' ? 'active' : false;
     },
     updatBuyer: function updatBuyer(id) {
       var _this3 = this;
@@ -2417,6 +2433,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "deliverysTable",
   data: function data() {
@@ -2435,7 +2464,8 @@ __webpack_require__.r(__webpack_exports__);
         birthDate: '',
         notes: '',
         password: '',
-        password_confirmation: ''
+        password_confirmation: '',
+        active: ''
       },
       errors: [],
       pagination: {},
@@ -2507,6 +2537,11 @@ __webpack_require__.r(__webpack_exports__);
       this.deliveryO.area = delivery.area;
       this.deliveryO.street = delivery.street;
       this.deliveryO.buildingNumber = delivery.buildingNumber;
+      this.deliveryO.active = delivery.permissions.filter(function (el) {
+        return el.name === 'active';
+      }).map(function (el) {
+        return el.name;
+      }) == 'active' ? 'active' : false;
     },
     updatDelivery: function updatDelivery(id) {
       var _this3 = this;
@@ -2783,6 +2818,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "sellersTable",
   data: function data() {
@@ -2802,7 +2842,9 @@ __webpack_require__.r(__webpack_exports__);
         birthDate: '',
         productsCount: '',
         totalAmount: '',
-        notes: ''
+        notes: '',
+        manageProducts: '',
+        manageOffers: ''
       },
       errors: [],
       pagination: {},
@@ -2874,6 +2916,16 @@ __webpack_require__.r(__webpack_exports__);
       this.sellerO.productsCount = seller.productsCount;
       this.sellerO.totalAmount = seller.totalAmount;
       this.sellerO.notes = seller.notes;
+      this.sellerO.manageProducts = seller.permissions.filter(function (el) {
+        return el.name === 'manage products';
+      }).map(function (el) {
+        return el.name;
+      }) == 'manage products' ? 'manage products' : false;
+      this.sellerO.manageOffers = seller.permissions.filter(function (el) {
+        return el.name === 'manage offers';
+      }).map(function (el) {
+        return el.name;
+      }) == 'manage offers' ? 'manage offers' : false;
     },
     updatseller: function updatseller(id) {
       var _this3 = this;
@@ -77026,6 +77078,25 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
+            _c(
+              "td",
+              _vm._l(buyer.permissions, function(permission) {
+                return _c("p", { key: permission.name }, [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(
+                        permission.name.replace(
+                          /^./,
+                          permission.name[0].toUpperCase()
+                        )
+                      ) +
+                      "\n                "
+                  )
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
             _c("td", [_vm._v(_vm._s(buyer.birthDate))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(buyer.totalAmount))]),
@@ -77576,7 +77647,31 @@ var render = function() {
                         }
                       })
                     ])
-                  ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-3" },
+                    [
+                      _c("label", [_vm._v("Permissions:")]),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-checkbox",
+                        {
+                          attrs: { value: "active" },
+                          model: {
+                            value: _vm.buyerO.active,
+                            callback: function($$v) {
+                              _vm.$set(_vm.buyerO, "active", $$v)
+                            },
+                            expression: "buyerO.active"
+                          }
+                        },
+                        [_vm._v("Active")]
+                      )
+                    ],
+                    1
+                  )
                 ]),
                 _vm._v(" "),
                 _vm._m(1)
@@ -77606,6 +77701,8 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Phone")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Address")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Permissions")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Birth Date")]),
         _vm._v(" "),
@@ -77785,7 +77882,23 @@ var render = function() {
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
-    _vm._m(0),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-primary float-left",
+        attrs: {
+          type: "button",
+          "data-toggle": "modal",
+          "data-target": "#formModal"
+        },
+        on: {
+          click: function($event) {
+            ;(_vm.edit = false), (_vm.deliveryO = {})
+          }
+        }
+      },
+      [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Create delivery")]
+    ),
     _vm._v(" "),
     _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
       _c("ul", { staticClass: "pagination justify-content-end" }, [
@@ -77853,7 +77966,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("table", { staticClass: "table table-striped" }, [
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
       _c(
         "tbody",
@@ -77892,6 +78005,25 @@ var render = function() {
                   _vm._s(delivery.buildingNumber)
               )
             ]),
+            _vm._v(" "),
+            _c(
+              "td",
+              _vm._l(delivery.permissions, function(permission) {
+                return _c("p", { key: permission.name }, [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(
+                        permission.name.replace(
+                          /^./,
+                          permission.name[0].toUpperCase()
+                        )
+                      ) +
+                      "\n                "
+                  )
+                ])
+              }),
+              0
+            ),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(delivery.birthDate))]),
             _vm._v(" "),
@@ -78489,6 +78621,34 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "col" },
+                  [
+                    _c("label", [_vm._v("Permissions:")]),
+                    _vm._v(" "),
+                    _c(
+                      "b-form-checkbox",
+                      {
+                        attrs: { value: "active" },
+                        model: {
+                          value: _vm.deliveryO.active,
+                          callback: function($$v) {
+                            _vm.$set(_vm.deliveryO, "active", $$v)
+                          },
+                          expression: "deliveryO.active"
+                        }
+                      },
+                      [_vm._v("Active")]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
               _c("div", { staticClass: "modal-footer" }, [
                 _c(
                   "button",
@@ -78550,23 +78710,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "btn btn-primary float-left",
-        attrs: {
-          type: "button",
-          "data-toggle": "modal",
-          "data-target": "#formModal"
-        }
-      },
-      [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Create delivery")]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
@@ -78580,6 +78723,8 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Phone")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Address")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Permissions")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Birth Date")]),
         _vm._v(" "),
@@ -79495,7 +79640,46 @@ var render = function() {
                         }
                       })
                     ])
-                  ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-3" },
+                    [
+                      _c("label", [_vm._v("Permissions:")]),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-checkbox",
+                        {
+                          attrs: { value: "manage products" },
+                          model: {
+                            value: _vm.sellerO.manageProducts,
+                            callback: function($$v) {
+                              _vm.$set(_vm.sellerO, "manageProducts", $$v)
+                            },
+                            expression: "sellerO.manageProducts"
+                          }
+                        },
+                        [_vm._v("Manage Products")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-checkbox",
+                        {
+                          attrs: { value: "manage offers" },
+                          model: {
+                            value: _vm.sellerO.manageOffers,
+                            callback: function($$v) {
+                              _vm.$set(_vm.sellerO, "manageOffers", $$v)
+                            },
+                            expression: "sellerO.manageOffers"
+                          }
+                        },
+                        [_vm._v("Manage Offers")]
+                      )
+                    ],
+                    1
+                  )
                 ]),
                 _vm._v(" "),
                 _vm._m(1)
@@ -79712,7 +79896,23 @@ var render = function() {
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
-    _vm._m(0),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-primary float-left",
+        attrs: {
+          type: "button",
+          "data-toggle": "modal",
+          "data-target": "#formModal"
+        },
+        on: {
+          click: function($event) {
+            ;(_vm.edit = false), (_vm.supervisorO = {})
+          }
+        }
+      },
+      [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Create supervisor")]
+    ),
     _vm._v(" "),
     _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
       _c("ul", { staticClass: "pagination justify-content-end" }, [
@@ -79780,7 +79980,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("table", { staticClass: "table table-striped" }, [
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
       _c(
         "tbody",
@@ -79826,7 +80026,12 @@ var render = function() {
                 return _c("p", { key: permission.name }, [
                   _vm._v(
                     "\n                        " +
-                      _vm._s(permission.name) +
+                      _vm._s(
+                        permission.name.replace(
+                          /^./,
+                          permission.name[0].toUpperCase()
+                        )
+                      ) +
                       "\n                    "
                   )
                 ])
@@ -80613,23 +80818,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "btn btn-primary float-left",
-        attrs: {
-          type: "button",
-          "data-toggle": "modal",
-          "data-target": "#formModal"
-        }
-      },
-      [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Create supervisor")]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

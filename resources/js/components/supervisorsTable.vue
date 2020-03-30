@@ -15,7 +15,7 @@
             </div>
         </form>
         <hr>
-        <button type="button" class="btn btn-primary float-left" data-toggle="modal" data-target="#formModal"><i class="fas fa-plus"></i> Create supervisor</button>
+        <button @click="edit =false,supervisorO={}" type="button" class="btn btn-primary float-left" data-toggle="modal" data-target="#formModal"><i class="fas fa-plus"></i> Create supervisor</button>
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-end">
                 <li v-bind:class="[{disabled: !pagination.prev_page_url}]" class="page-item"><a class="page-link" href="#" @click="fetchSupervisors(pagination.prev_page_url)">Previous</a></li>
@@ -54,7 +54,7 @@
                 <td>{{supervisor.city}}/{{supervisor.area}}/{{supervisor.street}}/{{supervisor.buildingNumber}}</td>
                 <td >
                         <p v-for="permission in supervisor.permissions" :key="permission.name" >
-                            {{permission.name}}
+                            {{permission.name.replace(/^./, permission.name[0].toUpperCase())}}
                         </p>
                 </td>
                 <td>{{supervisor.birthDate}}</td>

@@ -42,27 +42,3 @@ class CheckPermission
     }
 }
 
-
-
-/*
-$permissions =is_array($actions['permission'])?$actions['permission']:null;
-if ($permissions != null){
-    $pState=true;
-    foreach ($permissions as $permission){
-        if (!$request->user('admin')->hasPermission($permissions)){
-            $pState=false;
-            break;
-        }
-        $pState=true;
-    }
-    if ($pState == true){
-        return $next($request);
-    }
-}
-/*if ($request->user('admin')->hasAnyPermission($permissions) || !$permissions){
-    return $next($request);
-}
-return response('Insufficient permissions',401);
-}
-}
-*/
