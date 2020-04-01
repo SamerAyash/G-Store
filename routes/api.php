@@ -36,6 +36,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
     Route::patch('/delivery/{id}','AdminController@updateDelivery');
     Route::delete('/delivery/{id}','AdminController@destroy');
     /// ////////////////////////////////////////////////////////////
-    Route::post('/searchBuyer','UserController@searchBuyer');
+    Route::get('/requests','RequestsTable@getRequests');
+    Route::patch('/requests/{id}','RequestsTable@updateRequests');
+    Route::delete('/requests/{id}','RequestsTable@deleteRequests');
+
 });
 

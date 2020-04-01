@@ -38,7 +38,7 @@ class CheckPermission
         if ($request->user('admin')->hasAllPermissions($permissions) || !$permissions){
             return $next($request);
         }
-        return response('Insufficient permissions',401);
+        return redirect()->back();
     }
 }
 

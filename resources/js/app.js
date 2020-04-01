@@ -15,6 +15,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 /*
 import './custom.scss';
 */
+Vue.component('requests-table',require('./components/requestsTable').default);
 //////////////////////////////////////////////////////////////
 const router = new VueRouter({
     history: true,
@@ -23,5 +24,5 @@ const router = new VueRouter({
 });
 const app = new Vue({
     el: '#app',
-    router
+    router,
 });

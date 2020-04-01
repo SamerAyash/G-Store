@@ -135,7 +135,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{asset('design/adminlte/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{asset('images/admins/'.admin()->user()->image)}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{admin()->user()->name}}</a>
@@ -148,7 +148,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item has-treeview">
-                    <a href="{{aroute('home')}}" class="nav-link ">
+                    <a href="{{aroute('home')}}" class="nav-link {{Request::path() == 'admin/home'?'active':''}}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             {{trans('admin.dashboard')}}
@@ -156,13 +156,23 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="{{aroute('acountsTable')}}" class="nav-link active">
+                    <a href="{{aroute('acountsTable')}}" class="nav-link {{Request::path() == 'admin/acounts-table'?'active':''}}">
                         <i class="nav-icon fas fa-user-alt"></i>
                         <p>
                             {{trans('admin.adminAccount')}}
                         </p>
                     </a>
                 </li>
+                @if(admin()->user()->type == 'superAdmin')
+                    <li class="nav-item has-treeview">
+                        <a href="{{aroute('requestsTable')}}" class="nav-link {{Request::path() == 'admin/requests-table'?'active':''}}">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p>
+                                Requests and Complaints
+                            </p>
+                        </a>
+                    </li>
+                @endif
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
