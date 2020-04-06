@@ -17,5 +17,11 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(RequestsAndComplaints::class);
+        $this->call(FoodMarketSeeder::class);
+        $this->call(MobileAndTabletSeeder::class);
+        $this->call(ElectronicsSeeder::class);
+        $this->call(BeautyAndHelthSeeder::class);
+        $this->call(HomeSeeder::class);
+        $this->call(SportAndGamesSeeder::class);
     }
 }

@@ -8,10 +8,10 @@ class Offer extends Model
 {
     public function buyer()
     {
-        return $this->belongsTo('App/User');
+        return $this->belongsTo('App\User');
     }
     public function product(){
-        $this->belongsTo('App/Product');
+        $this->belongsTo('App\Product');
     }
 
 }

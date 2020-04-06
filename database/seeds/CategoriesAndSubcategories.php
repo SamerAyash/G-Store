@@ -13,11 +13,11 @@ class CategoriesAndSubcategories extends Seeder
     public function run()
     {
         $categories=[
-            'Food Market'=>[],
+            'Food Market'=>['Food Market'],
             'Mobiles & Tablets'=>['Mobiles','Tablets','Accessories'],
-            'Electronics'=>['Screens & Audio','Computers & Laptops','Household Devices','Musical instruments','Cameras'],
+            'Electronics'=>['Screens & Audio','Computers & Laptops','Household Devices','Cameras'],
             'Beauty & Health'=>['Perfumes','Make-up','Body care devices','Creams'],
-            'Sport & Games'=>[],
+            'Sport & Games'=>['Sport & Games'],
             'Home'=>['Kitchen & Dining','Equipment and tools','Furniture and Decoration','Cleaning materials'],
         ];
         foreach ($categories as $category=>$subCategories){

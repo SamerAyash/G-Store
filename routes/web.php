@@ -19,3 +19,7 @@ Auth::routes();
 Route::get('/home',function (){
     return view('admin.index');
     })->name('home');
+Route::get('/homes',function (){
+    $products=\App\Product::with('home')->where('subCategory_id',16)->first();
+    return response($products->home,200);
+});

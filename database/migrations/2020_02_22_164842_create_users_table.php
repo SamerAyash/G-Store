@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('address_id');
             $table->foreign('address_id')->references('id')->on('addresses');
             $table->date('birthDate');
+            $table->enum('gender',['male','female']);
             $table->enum('type',['seller','buyer']);
             $table->bigInteger('productsCount')->default(0);
             $table->string('shopName')->nullable();

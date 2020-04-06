@@ -19,13 +19,18 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('mainImage');
             $table->float('price');
-            $table->bigInteger('amount');
+            $table->integer('amount');
             $table->float('rate');
+            $table->bigInteger('ratingCount');
+            $table->string('brand');
+            $table->boolean('isHidden')->default(false);
+            $table->boolean('isAccept')->default(false);
             $table->unsignedBigInteger('subCategory_id');
             $table->foreign('subCategory_id')->references('id')->on('sub_categories');
             $table->unsignedBigInteger('seller_id');
             $table->foreign('seller_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('adminName')->nullable();
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }
