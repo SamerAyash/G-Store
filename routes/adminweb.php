@@ -17,7 +17,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
             'middleware'=>'adminPermission',
             'uses'=>'AdminController@index',
             'role'=>['superAdmin','supervisor'],
-            'permission'=>'manage customers'
+            'permission'=>['manage customers']
         ]);
         Route::get('/logout',['as'=>'admin.logout','uses'=>'AdminAuth@logout']);
 
@@ -34,6 +34,13 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
             'uses'=>'RequestsTable@index',
             'role'=>['superAdmin'],
             'permission'=>''
+        ]);
+        Route::get('/outstanding-products-and-offers',[
+            'as'=>'admin.outstandingProductTable',
+            'middleware'=>'adminPermission',
+            'uses'=>'ProductController@productsTable',
+            'role'=>['superAdmin','supervisor'],
+            'permission'=>['manage products','manage offers']
         ]);
     });
 

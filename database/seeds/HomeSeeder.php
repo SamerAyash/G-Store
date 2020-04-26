@@ -15,7 +15,7 @@ class HomeSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0;$i<15;$i++){
+        for($i=0;$i<30;$i++){
             $array =['Kitchen & Dining','Equipment and tools','Furniture and Decoration','Cleaning materials'];
             $index=array_rand($array);
             $subCategory_id =SubCategory::where('name',$array[$index])->first()->id;

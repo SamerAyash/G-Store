@@ -19,7 +19,7 @@ class CreateHouseholdDevicesTable extends Migration
                 'air fryer','kettle','water dispenser','mixer','waffle maker','iron','fan'
             ,'sewing machine','washing machine','refrigerator','oven & toaster','microwave']);
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

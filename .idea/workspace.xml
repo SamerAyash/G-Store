@@ -2,71 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="495c1560-5319-4f47-84ad-e7d02e13a518" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Products/BeautyAndHelthController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Products/CameraController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Products/ComputerAndLaptopController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Products/HomeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Products/HouseholdDeviceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Products/MobileAndTabletController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Products/ScreenAndAudioController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Products/SportAndGamesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Products/BeautyAndHelth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Products/Camera.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Products/ComputerAndLaptop.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Products/Home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Products/HouseholdDevice.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Products/MobileAndTablet.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Products/ScreenAndAudio.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Products/SportAndGames.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/BeautyAndHelthFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/CameraFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ComputerAndLaptopFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/HomeFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/HouseholdDeviceFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/MobileAndTabletFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ProductImagesFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ScreenAndAudioFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/SportAndGamesFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_155903_create_screen_and_audio_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_160527_create_computer_and_laptops_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_160855_create_beauty_and_helths_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_161431_create_mobile_and_tablets_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_161535_create_sport_and_games_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_162411_create_homes_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_175637_create_household_devices_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_180121_create_cameras_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/BeautyAndHelthSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/CameraSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/ComputerAndLaptopSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/ElectronicsSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/FoodMarketSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/HomeSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/HouseholdDeviceSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/MobileAndTabletSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/ScreenAndAudioSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/SportAndGamesSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/iphone.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/iphone11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/OfferFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/offerTable.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/productSidebar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/productsTable.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/productsTable.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Offer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Permission.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/ProductImages.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ProductImages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/SellerCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SellerCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Products/BeautyAndHelth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Products/BeautyAndHelth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Products/Camera.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Products/Camera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Products/ComputerAndLaptop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Products/ComputerAndLaptop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Products/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Products/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Products/HouseholdDevice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Products/HouseholdDevice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Products/MobileAndTablet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Products/MobileAndTablet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Products/ScreenAndAudio.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Products/ScreenAndAudio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Products/SportAndGames.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Products/SportAndGames.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/SubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SubCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_164842_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_164842_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_172717_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_172717_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CategoriesAndSubcategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriesAndSubcategories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_171846_create_sub_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_171846_create_sub_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_172835_create_offers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_172835_create_offers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_172940_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_172940_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_04_155903_create_screen_and_audio_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_155903_create_screen_and_audio_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_04_160527_create_computer_and_laptops_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_160527_create_computer_and_laptops_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_04_160855_create_beauty_and_helths_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_160855_create_beauty_and_helths_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_04_161431_create_mobile_and_tablets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_161431_create_mobile_and_tablets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_04_161535_create_sport_and_games_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_161535_create_sport_and_games_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_04_162411_create_homes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_162411_create_homes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_04_175637_create_household_devices_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_175637_create_household_devices_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_04_180121_create_cameras_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_04_180121_create_cameras_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/AdminSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AdminSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/BeautyAndHelthSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/BeautyAndHelthSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CameraSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CameraSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ComputerAndLaptopSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ComputerAndLaptopSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ProductSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/FoodMarketSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/FoodMarketSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/HomeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/HomeSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/HouseholdDeviceSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/HouseholdDeviceSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/MobileAndTabletSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/MobileAndTabletSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/OfferSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/OfferSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PermissionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PermissionSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/RequestsAndComplaints.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RequestsAndComplaints.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ScreenAndAudioSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ScreenAndAudioSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/SportAndGamesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SportAndGamesSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/buyersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/buyersTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/supervisorsTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/supervisorsTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminViews/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/navbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/adminweb.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/adminweb.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +179,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -300,21 +292,51 @@
       <workItem from="1585748676944" duration="17173000" />
       <workItem from="1585835074184" duration="3184000" />
       <workItem from="1586013666272" duration="9192000" />
-      <workItem from="1586082711696" duration="32801000" />
+      <workItem from="1586082711696" duration="34064000" />
+      <workItem from="1586185173572" duration="4160000" />
+      <workItem from="1586281594360" duration="7057000" />
+      <workItem from="1586357144486" duration="5569000" />
+      <workItem from="1586457014144" duration="599000" />
+      <workItem from="1586477494225" duration="2682000" />
+      <workItem from="1586481490864" duration="795000" />
+      <workItem from="1586482543572" duration="15830000" />
+      <workItem from="1586556326437" duration="14104000" />
+      <workItem from="1586621790668" duration="3155000" />
+      <workItem from="1586689443094" duration="16450000" />
+      <workItem from="1586732478770" duration="6960000" />
+      <workItem from="1586786828488" duration="10599000" />
+      <workItem from="1586825970294" duration="1437000" />
+      <workItem from="1586834409127" duration="2879000" />
+      <workItem from="1586880079077" duration="1443000" />
+      <workItem from="1586947060173" duration="5392000" />
+      <workItem from="1587129691313" duration="4884000" />
+      <workItem from="1587138805229" duration="2145000" />
+      <workItem from="1587290584221" duration="478000" />
+      <workItem from="1587291154578" duration="5888000" />
+      <workItem from="1587305486233" duration="3028000" />
+      <workItem from="1587341970849" duration="3337000" />
+      <workItem from="1587347592139" duration="1779000" />
+      <workItem from="1587394266311" duration="2276000" />
+      <workItem from="1587450065689" duration="4000" />
+      <workItem from="1587563240891" duration="12110000" />
+      <workItem from="1587644876676" duration="6377000" />
+      <workItem from="1587680580460" duration="8860000" />
+      <workItem from="1587767053392" duration="26676000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584995731861">
+    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587290976370">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1584995731861" />
+    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1586811937748" />
+    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1587290976370" />
     <state x="354" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586133873775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -358,18 +380,23 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584466259718" />
+    <state x="494" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586797827004">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="494" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1586797827004" />
     <state x="1383" y="-14" width="920" height="521" maximized="true" key="dock-window-1" timestamp="1583708473496">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1383" y="-14" width="920" height="521" maximized="true" key="dock-window-1/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1583674426619" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1584476211098">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1587698502222">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1584476211098" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586023125821">
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1586709946087" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1587698502222" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586567847810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1586023125821" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1586567847810" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1585715091197" />
   </component>
 </project>

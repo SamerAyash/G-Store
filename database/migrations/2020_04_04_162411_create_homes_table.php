@@ -20,7 +20,7 @@ class CreateHomesTable extends Migration
             $table->string('material');
             $table->enum('type',['kitchen','tool','furniture','cleaning']);
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

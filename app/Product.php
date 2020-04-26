@@ -7,19 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     public function seller(){
-        $this->belongsTo('App\User');
+        return $this->belongsTo('App\User');
     }
     public function images(){
         return $this->hasMany('App\ProductImages');
     }
     public function subCategory(){
-        return $this->belongsTo('App\SubCategory');
+        return $this->belongsTo('App\SubCategory','subCategory_id','id');
     }
     public function cart(){
         return $this->hasMany('App\Cart');
     }
     public function offer(){
-        return $this->hasMany('App\Offer');
+        return $this->hasone('App\Offer');
     }
     public function order(){
         return $this->hasMany('App\Order');
@@ -47,5 +47,38 @@ class Product extends Model
     }
     public function sportAndGames(){
         return $this->hasOne('App\Products\SportAndGames');
+    }
+
+    public function checkSubClass($subcategory){
+        if($subcategory == 'Perfumes'||
+            $subcategory =='Make-up'||
+            $subcategory =='Body care devices'||
+            $subcategory =='Creams'){
+            return 'beautyAndHelth';
+        }
+        if($subcategory == 'Cameras'){
+            return'camera';
+        }
+        if($subcategory == 'Computers & Laptops'){
+            return'computerAndLaptop';
+        }
+        if($subcategory == 'Kitchen & Dining'||
+            $subcategory =='Equipment and tools'||
+            $subcategory =='Furniture and Decoration'||
+            $subcategory =='Cleaning materials'){
+            return'home';
+        }
+        if($subcategory == 'Household Devices'){
+            return'houseHoldDevice';
+        }
+        if($subcategory == 'Mobiles'||$subcategory == 'Tablets'){
+            return'mobileAndTablet';
+        }
+        if($subcategory == 'Screens & Audio'){
+            return'screenAndAudio';
+        }
+        if($subcategory == 'Sport & Games'){
+            return'sportAndGames';
+        }
     }
 }

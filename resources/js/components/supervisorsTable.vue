@@ -178,17 +178,15 @@
                             </div>
                         </div>
                         <hr>
+                        <label>Permissions:</label>
                         <div class="row">
-                                    <div class="col">
-                                        <label>Permissions:</label>
-                                        <b-form-checkbox value="manage orders" v-model="supervisorO.manageOrders">Manage Orders</b-form-checkbox>
+                            <div class="col">
                                         <b-form-checkbox value="manage customers" v-model="supervisorO.manageCustomers">Manage Customers</b-form-checkbox>
                                         <b-form-checkbox value="manage products" v-model="supervisorO.manageProducts">Manage Products</b-form-checkbox>
                                     </div>
                                     <div class="col">
                                         <b-form-checkbox value="manage offers" v-model="supervisorO.manageOffers">Manage Offers</b-form-checkbox>
-                                        <b-form-checkbox value="product reviews" v-model="supervisorO.productReviews">product Reviews</b-form-checkbox>
-                                        <b-form-checkbox value="offer reviews" v-model="supervisorO.offerReviews">Offer Reviews</b-form-checkbox>
+                                        <b-form-checkbox value="manage orders" v-model="supervisorO.manageOrders">Manage Orders</b-form-checkbox>
                                     </div>
                         </div>
                         <div class="modal-footer">
@@ -230,8 +228,6 @@
                     manageCustomers :'',
                     manageProducts :'',
                     manageOffers :'',
-                    productReviews :'',
-                    offerReviews :'',
 
                 },
                 errors:[],
@@ -308,8 +304,6 @@
               this.supervisorO.manageCustomers=supervisor.permissions.filter(el=>el.name ==='manage customers').map(x=>x.name) == 'manage customers'? 'manage customers':false ;
               this.supervisorO.manageProducts=supervisor.permissions.filter(el=>el.name ==='manage products').map(x=>x.name) == 'manage products'? 'manage products':false ;
               this.supervisorO.manageOffers=supervisor.permissions.filter(el=>el.name ==='manage offers').map(x=>x.name) == 'manage offers'? 'manage offers':false ;
-              this.supervisorO.productReviews=supervisor.permissions.filter(el=>el.name ==='product reviews').map(x=>x.name) == 'product reviews'? 'product reviews':false ;
-              this.supervisorO.offerReviews=supervisor.permissions.filter(el=>el.name ==='offer reviews').map(x=>x.name) == 'offer reviews'? 'offer reviews':false ;
 
             },
             updatSupervisor(id){

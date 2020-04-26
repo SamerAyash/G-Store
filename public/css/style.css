@@ -1,0 +1,20 @@
+.trow:hover{
+    color: #37a000;
+}
+.fa-star{
+    color:white;
+}
+.golden-star{
+    color: gold;
+}
+.mainImage{
+    width: 300px;
+    height: 400px;
+}
+.image{
+    width: 80px;
+    height: 80px;
+}
+.vl{
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}

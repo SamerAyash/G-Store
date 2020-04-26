@@ -12,7 +12,7 @@ class RequestsAndComplaints extends Seeder
     public function run()
     {
         $facker = \Faker\Factory::create();
-        for ($i=0 ;$i< 20;$i++){
+        for ($i=0 ;$i< 30;$i++){
             $request =\App\Request::create([
                 'email'=>$facker->email,
                 'description'=>$facker->text

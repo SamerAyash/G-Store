@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware(['auth:api','admin:admin'])->get('/user', function (Request $request) {
     return $request->user();});
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
@@ -39,6 +39,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
     Route::get('/requests','RequestsTable@getRequests');
     Route::patch('/requests/{id}','RequestsTable@updateRequests');
     Route::delete('/requests/{id}','RequestsTable@deleteRequests');
-
+    //////////////////////////////////////////////////////////////
+    Route::get('/outProducts','ProductController@outProducts');
+    Route::patch('/outProductsU/{id}','ProductController@updateProduct');
+    Route::delete('/outProductsD/{id}','ProductController@deleteProduct');
+    Route::get('/get-product/{id}','ProductController@getProduct');
+    ////////////////////////////////////////////////////////////////
+    Route::post('/offers','ProductController@offers');
+    Route::delete('/offers/{id}','ProductController@deleteOffer');
+    Route::put('/offers/{id}','ProductController@updateOffer');
 });
 

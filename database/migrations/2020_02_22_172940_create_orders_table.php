@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->float('paid_price');
             $table->date('payment_time');
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->unsignedBigInteger('buyer_id');
             $table->foreign('buyer_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('delivery_id');

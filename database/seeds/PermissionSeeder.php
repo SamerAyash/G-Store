@@ -11,8 +11,8 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        $permissions=['manage orders','manage customers','manage products',
-            'product reviews','offer reviews','manage coupons','manage offers','active'];
+        $permissions=['manage orders','manage customers','manage products'
+            ,'manage coupons','manage offers','active'];
         foreach ($permissions as $permission){
             Permission::create([
                 'name'=>$permission

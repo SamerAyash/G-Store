@@ -279,7 +279,6 @@
                 axios.patch('/api/admin/buyers/'+id,this.buyerO)
                     .then(data => {
                         this.fetchBuyers();
-                        console.log(data.data)
                         $("#editModal").modal( 'hide' ).data( 'bs.modal', null );
                         $( '.modal-backdrop' ).remove();
                         this.makeToast(

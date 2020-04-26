@@ -34,13 +34,13 @@ class Admin extends Authenticatable
     }
     public function hasAllPermissions($permissions){
         if (is_array($permissions)){
-            $state=true;
+            $state=false;
             foreach ($permissions as $permission){
-                if (!$this->hasPermission($permissions)){
-                    $state=false;
+                if ($this->hasPermission($permission)){
+                    $state=true;
                     break;
                 }
-                $state=true;
+                $state=false;
             }
             if ($state == true){
                 return true;

@@ -22,7 +22,7 @@ class CreateComputerAndLaptopsTable extends Migration
             $table->integer('ram');
             $table->enum('type',['computer','laptop']);
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -113,8 +113,8 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
-                <i class="fas fa-th-large"></i>
+            <a class="nav-link" href="{{aroute('logout')}}">
+                <i class="fas fa-sign-out-alt"></i>
             </a>
         </li>
     </ul>
@@ -160,6 +160,13 @@
                         <i class="nav-icon fas fa-user-alt"></i>
                         <p>
                             {{trans('admin.adminAccount')}}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{aroute('outstandingProductTable')}}" class="nav-link {{Request::path() == 'admin/outstanding-products-and-offers'?'active':''}}">
+                        <i class="fas fa-store"></i> <p style="font-size: 80%">
+                             Outstanding products and offers
                         </p>
                     </a>
                 </li>

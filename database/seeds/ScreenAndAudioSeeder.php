@@ -16,7 +16,7 @@ class ScreenAndAudioSeeder extends Seeder
     public function run()
     {
         $subCategory_id = SubCategory::where('name', 'Screens & Audio')->first()->id;
-        for($i=0;$i<10;$i++){
+        for($i=0;$i<20;$i++){
             $seller_id = User::where('type', 'seller')->inRandomOrder()->first()->id;
             $product=factory(Product::class)->create([
                 'subCategory_id'=>$subCategory_id,

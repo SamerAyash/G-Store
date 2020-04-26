@@ -20,7 +20,7 @@ class CreateBeautyAndHelthsTable extends Migration
             $table->enum('power',['battery','electricity','both'])->nullable();
             $table->enum('type',['perfume','make-up','body care device','cream']);
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

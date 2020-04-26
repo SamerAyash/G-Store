@@ -28,8 +28,8 @@ class AdminSeeder extends Seeder
                     'remember_token' => \Illuminate\Support\Str::random(10),
                 ]
             );
-        $permissions=['manage orders','manage customers','manage products',
-            'product reviews','offer reviews','manage coupons','manage offers'];
+        $permissions=['manage orders','manage customers','manage products'
+            ,'manage coupons','manage offers'];
         foreach ($permissions as $permission){
             $per =Permission::where('name',$permission)->get()->first();
             Model_has_permission::create([
@@ -53,8 +53,8 @@ class AdminSeeder extends Seeder
                     'remember_token' => \Illuminate\Support\Str::random(10),
                 ]
             );
-            $permissions=['manage orders','manage customers','product reviews',
-                            'offer reviews','manage offers','manage products'];
+            $permissions=['manage orders','manage customers'
+                ,'manage offers','manage products'];
             foreach ($permissions as $permission){
                 $per =Permission::where('name',$permission)->get()->first();
                 Model_has_permission::create([
