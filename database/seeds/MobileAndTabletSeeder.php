@@ -16,7 +16,7 @@ class MobileAndTabletSeeder extends Seeder
     public function run()
     {
 
-        for($i=0;$i<30;$i++){
+        for($i=0;$i<40;$i++){
             $array =['Mobiles','Tablets','Accessories'];
             $index=array_rand($array);
             $subCategory_id =SubCategory::where('name',$array[$index])->first()->id;
@@ -28,7 +28,7 @@ class MobileAndTabletSeeder extends Seeder
                     'seller_id'=>$seller_id
                 ]);
                 User::whereId($seller_id)->increment('productsCount');
-                factory(\App\ProductImages::class)->create([
+                factory(\App\ProductImages::class,5)->create([
                     'product_id'=>$product->id
                 ]);
             }
@@ -39,7 +39,7 @@ class MobileAndTabletSeeder extends Seeder
                         'seller_id'=>$seller_id
                     ]);
                     User::whereId($seller_id)->increment('productsCount');
-                    factory(ProductImages::class)->create([
+                    factory(ProductImages::class,5)->create([
                         'product_id'=>$product->id
                     ]);
                     factory(MobileAndTablet::class)->create([
@@ -53,7 +53,7 @@ class MobileAndTabletSeeder extends Seeder
                         'seller_id'=>$seller_id
                     ]);
                     User::whereId($seller_id)->increment('productsCount');
-                    factory(ProductImages::class)->create([
+                    factory(ProductImages::class,5)->create([
                         'product_id'=>$product->id
                     ]);
                     factory(MobileAndTablet::class)->create([

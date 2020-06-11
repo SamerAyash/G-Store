@@ -81,4 +81,8 @@ class Product extends Model
             return'sportAndGames';
         }
     }
+
+    public function priceAfterOffer(){
+        return $this->price - $this->price*$this->offer->discount /100;
+    }
 }

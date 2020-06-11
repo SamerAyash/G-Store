@@ -15,7 +15,7 @@ class HomeSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0;$i<30;$i++){
+        for($i=0;$i<40;$i++){
             $array =['Kitchen & Dining','Equipment and tools','Furniture and Decoration','Cleaning materials'];
             $index=array_rand($array);
             $subCategory_id =SubCategory::where('name',$array[$index])->first()->id;
@@ -26,7 +26,7 @@ class HomeSeeder extends Seeder
                     'seller_id'=>$seller_id
                 ]);
                 User::whereId($seller_id)->increment('productsCount');
-                factory(ProductImages::class)->create([
+                factory(ProductImages::class,5)->create([
                     'product_id'=>$product->id
                 ]);
                 factory(Home::class)->create([
@@ -40,7 +40,7 @@ class HomeSeeder extends Seeder
                     'seller_id'=>$seller_id
                 ]);
                 User::whereId($seller_id)->increment('productsCount');
-                factory(ProductImages::class)->create([
+                factory(ProductImages::class,5)->create([
                     'product_id'=>$product->id
                 ]);
                 factory(Home::class)->create([
@@ -54,7 +54,7 @@ class HomeSeeder extends Seeder
                     'seller_id'=>$seller_id
                 ]);
                 User::whereId($seller_id)->increment('productsCount');
-                factory(ProductImages::class)->create([
+                factory(ProductImages::class,5)->create([
                     'product_id'=>$product->id
                 ]);
                 factory(Home::class)->create([
@@ -68,7 +68,7 @@ class HomeSeeder extends Seeder
                     'seller_id'=>$seller_id
                 ]);
                 User::whereId($seller_id)->increment('productsCount');
-                factory(ProductImages::class)->create([
+                factory(ProductImages::class,5)->create([
                     'product_id'=>$product->id
                 ]);
                 factory(Home::class)->create([

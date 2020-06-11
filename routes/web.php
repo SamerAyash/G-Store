@@ -11,15 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
-Route::get('/home',function (){
-    return view('admin.index');
-    })->name('home');
-Route::get('/homes',function (){
-    $products=\App\Product::with('home')->where('subCategory_id',16)->first();
-    return response($products->home,200);
-});
+//////////////////////////////////////////////////////////////////////////
+Route::get('/login',['as'=>'login','uses'=>'HomeController@login']);
+Route::post('/login','HomeController@dologin');
+Route::get('/register',['as'=>'register','uses'=>'HomeController@register']);
+Route::post('/register',['as'=>'register','uses'=>'HomeController@doRegister']);
+Route::get('/logout', ['as'=>'logout','uses'=>'HomeController@logout']);
+///////////////////////////////////////////////////////////////////////////
+Route::get('/',['as'=>'home','uses'=>'HomeController@index']);
+Route::get('/product/{id}',['as'=>'product','uses'=>'HomeController@getProduct']);
+
+
+Route::get('/index',function (){
+    return view('welcome');
+    })->name('index');

@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Caladea|Lora|Roboto&display=swap');
+.language{
+    position: relative;
+    right: 3em;
+    font-size:0.9em;
+    font-weight: bold;
+    font-family: Roboto,Sans-Serif;
+    color: #373A3C;
+}
+.nav-custom{
+    background-color: white !important;
+}
+.navbar-img{
+    margin-left:1.5em;
+}
+.already-have-account{
+    margin-right: 16em;
+    font-weight: 600;
+    font-size: 1.15vw;
+    font-family: 'Roboto',Sans-Serif ;
+}
+
+.sign-in{
+    color: #37A000 !important;
+    font-size: 1.2vw;
+}
+.content-custom{
+    margin-top: 3em;
+
+    color: #373A3C;
+
+}
+.input-customize{
+    border-top-color: white !important;
+    border-right-color: white !important;
+    border-left-color: white !important;
+
+}
+.input-title{
+    font-size: 1.2vw;
+    color: #373A3C;
+    font-family: Roboto, Sans-Serif;
+    margin-top: 0.5em;
+}
+.input-margin{
+    margin-top: 0.5em;
+}
+.create-account{
+    margin-left: 3em;
+    font-size: 1.9vw;
+    font-family: Roboto, Sans-Serif;
+    margin-bottom:1em;
+}
+
+.first-input{
+    margin-top: 0.5em;
+}
+.second-input-margin{
+    margin-left: 0.2em;
+}
+.btn-submit{
+    background-color: #37A000;
+    margin-top: 1em;
+    width: 125%;
+    color: white;
+    font-weight: 400;
+    font-family: Roboto, Sans-Serif;
+    margin-bottom: 4em;
+}
+
+
+
+/**********
+
+
+
+
+
+
+
+
+
+
+
+****************/
+@media (max-width: 450px) {
+    .navbar-img{
+        margin-left: 0em;
+        height: 26px;
+    }
+    .already-have-account{
+        font-size: 2.5vw;
+        margin-right: 3em;
+    }
+    .language{
+        right: 0em;
+    }
+    .sign-in{
+        font-size: 2.5vw;
+    }
+    .create-account{
+        margin-left: 4em;
+        font-size: 4.5vw;
+        font-weight: bold;
+    }
+    .input-customize{
+        width: 140%;
+        border-top-color: white !important;
+        border-right-color: white !important;
+        border-left-color: white !important;
+    }
+    .btn-submit{
+        width: 140%;
+    }
+    .input-title{
+        font-size: 3.5vw;
+    }
+}
+@media (max-width: 350px) {
+    .already-have-account{
+        font-size: 2.5vw;
+        margin-right: 2em;
+    }
+    .language{
+        font-size: 3vw;
+    }
+    .navbar-img{
+        height: 20px;
+    }
+    .content-custom{
+        margin-top: 2em;
+    }
+    .create-account{
+        margin-left: 6em;
+    }
+
+}

@@ -12,17 +12,23 @@ Vue.use(IconsPlugin);
 Vue.use(VueRouter);
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
-/*
-import './custom.scss';
-*/
+
 Vue.component('requests-table',require('./components/requestsTable').default);
+Vue.component('product-component',require('./components/productComponent').default);
+Vue.component('register-component',require('./components/registerComponent').default);
 //////////////////////////////////////////////////////////////
 const router = new VueRouter({
+    mode:'history',
     history: true,
     hashbang: false,
+    linkActiveClass: 'active',
     routes : routes,
 });
+//////////////////////////////////////////////////////////////
+import store from "./store/store.js";
+//////////////////////////////////////////////////////////////
 const app = new Vue({
     el: '#app',
     router,
+    store,
 });

@@ -2,40 +2,40 @@
     <div class="container" style="width: 680px;max-width: 700px">
         <h5>Category: {{category.name}}/Sub Category: {{sub_category.name}}</h5>
         <hr>
-    <div class="row" style="width: 680px;">
-        <div class="col-2" style="width: 100px">
-            <div class="row">
-                <img @click="changeImage(product.mainImage)" v-if="image != ''" :src="'/images/products/'+product.mainImage" class=" rounded d-block image">
+        <div class="row" style="width: 680px;">
+            <div class="col-2" style="width: 100px">
+                <div class="row">
+                    <img @click="changeImage(product.mainImage)" v-if="image != ''" :src="'/images/products/'+product.mainImage" class=" rounded d-block image">
+                </div>
+                <div class="row" v-for="image in images" v-bind:key="images.id">
+                    <br><br>
+                    <img @click="changeImage(image.name)" :src="'/images/products/'+image.name" class=" rounded d-block image">
+                </div>
             </div>
-            <div class="row" v-for="image in images" v-bind:key="images.id">
-                <br><br>
-                <img @click="changeImage(image.name)" :src="'/images/products/'+image.name" class=" rounded d-block image">
+            <div class="vl"></div>
+            <div class="col" v-if="image != ''">
+                <img :src="'/images/products/'+image" class=" rounded d-block mainImage">
+            </div>
+            <div class="col" style="margin-left: 70px">
+                <p class="textw"><b >Title: </b>{{product.title}}</p>
+                <p><b>Price: </b>{{product.price}}</p>
+                <p  class="textw"><b>Brand: </b>{{product.brand}}</p>
+                <p  class="textw"><b>Rate:</b>
+                    <i class="fas fa-star" v-bind:class="[{'golden-star': product.rate >=1}]"></i>
+                    <i class="fas fa-star" v-bind:class="[{'golden-star': product.rate >=2}]"></i>
+                    <i class="fas fa-star" v-bind:class="[{'golden-star': product.rate >=3}]"></i>
+                    <i class="fas fa-star" v-bind:class="[{'golden-star': product.rate >=4}]"></i>
+                    <i class="fas fa-star" v-bind:class="[{'golden-star': product.rate ==5}]"></i>
+                </p>
+                <p><b>Amount: </b>{{product.amount}}</p>
+                <p  class="textw"><b>Shop: </b>{{seller.shopName}}</p>
+                <p  class="textw"><b>Seller: </b>{{seller.name}}</p>
+                <p>*****************</p>
+                <p class="textw"><b>Admin Name: </b>{{product.adminName}}</p>
+                <p class="textw"><b>Created at: </b>{{product.created_at}}</p>
+                <p class="textw"><b>Updated at: </b>{{product.updated_at}}</p>
             </div>
         </div>
-        <div class="vl"></div>
-        <div class="col" v-if="image != ''">
-            <img :src="'/images/products/'+image" class=" rounded d-block mainImage">
-        </div>
-        <div class="col">
-            <p class="textw"><b >Title: </b>{{product.title}}</p>
-            <p><b>Price: </b>{{product.price}}</p>
-            <p  class="textw"><b>Brand: </b>{{product.brand}}</p>
-            <p  class="textw"><b>Rate:</b>
-                <i class="fas fa-star" v-bind:class="[{'golden-star': product.rate >=1}]"></i>
-                <i class="fas fa-star" v-bind:class="[{'golden-star': product.rate >=2}]"></i>
-                <i class="fas fa-star" v-bind:class="[{'golden-star': product.rate >=3}]"></i>
-                <i class="fas fa-star" v-bind:class="[{'golden-star': product.rate >=4}]"></i>
-                <i class="fas fa-star" v-bind:class="[{'golden-star': product.rate ==5}]"></i>
-            </p>
-            <p><b>Amount: </b>{{product.amount}}</p>
-            <p  class="textw"><b>Shop: </b>{{seller.shopName}}</p>
-            <p  class="textw"><b>Seller: </b>{{seller.name}}</p>
-            <p>*****************</p>
-            <p class="textw"><b>Admin Name: </b>{{product.adminName}}</p>
-            <p class="textw"><b>Created at: </b>{{product.created_at}}</p>
-            <p class="textw"><b>Updated at: </b>{{product.updated_at}}</p>
-        </div>
-    </div>
         <hr>
         <div>
             <h6>
@@ -85,7 +85,7 @@
                 <div class="col">
                     <p><b>Screen size: </b>{{computer_and_laptop.displaySize}} inch</p>
                     <p><b>Memory Ram: </b>{{computer_and_laptop.ram}} GB</p>
-                        <p><b>Processor: </b>{{computer_and_laptop.processor}}</p>
+                    <p><b>Processor: </b>{{computer_and_laptop.processor}}</p>
                 </div>
                 <div class="col">
                     <p><b>Storage capacity: </b>{{computer_and_laptop.diskSize}} GB</p>
@@ -171,13 +171,11 @@
                 subProduct_id:''
             }
         },
-
         watch: {
             id:function(){
-                 this.getProduct(this.$props.id);
+                this.getProduct(this.$props.id);
             },
             image:function(){
-
             },
             product:function () {
                 this.sub_category=this.product.sub_category;
@@ -195,7 +193,6 @@
                 this.home=this.product.home;
                 this.note=this.product.note;
             }
-
         },
         methods:{
             getProduct(id){
@@ -257,11 +254,11 @@
 </script>
 
 <style scoped>
-.textw{
-    display:block;
-    width:200px;
-    word-wrap:break-word;
-}
+    .textw{
+        display:block;
+        width:200px;
+        word-wrap:break-word;
+    }
     .pW{
         display:block;
         width:650px;

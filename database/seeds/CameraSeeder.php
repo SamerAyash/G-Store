@@ -16,14 +16,14 @@ class CameraSeeder extends Seeder
     public function run()
     {
         $subCategory_id = SubCategory::where('name','Cameras')->first()->id;
-        for($i=0;$i<20;$i++){
+        for($i=0;$i<30;$i++){
             $seller_id = User::where('type', 'seller')->inRandomOrder()->first()->id;
             $product=factory(Product::class)->create([
                 'subCategory_id'=>$subCategory_id,
                 'seller_id'=>$seller_id
             ]);
             User::whereId($seller_id)->increment('productsCount');
-            factory(ProductImages::class)->create([
+            factory(ProductImages::class,5)->create([
                 'product_id'=>$product->id
             ]);
             factory(Camera::class)->create([

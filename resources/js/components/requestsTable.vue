@@ -98,7 +98,7 @@
                         this.fetchRequests();
                             $("#deleteModal").modal('hide').data('bs.modal', null);
                             $('.modal-backdrop').remove();
-                        request_id ='';
+                        this.request_id ='';
                     })
                     .catch(errors=> {
                         console.log(errors)

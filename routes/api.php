@@ -50,3 +50,4 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
     Route::put('/offers/{id}','ProductController@updateOffer');
 });
 
+

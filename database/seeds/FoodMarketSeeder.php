@@ -22,7 +22,7 @@ class FoodMarketSeeder extends Seeder
                 'seller_id'=>$seller_id
             ]);
             User::whereId($seller_id)->increment('productsCount');
-            factory(ProductImages::class)->create([
+            factory(ProductImages::class,5)->create([
                 'product_id'=>$product->id
             ]);
         }

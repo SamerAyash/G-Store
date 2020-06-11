@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Caladea|Lora|Roboto&display=swap');
+body{
+    overflow-x: hidden;
+}
+.language{
+    position: relative;
+    right: 3em;
+    font-size:0.9em;
+    font-weight: bold;
+    font-family: Roboto,Sans-Serif;
+    color: #373A3C;
+}
+.nav-custom{
+    background-color: white !important;
+}
+.navbar-img{
+    margin-left:1.5em;
+}
+.sign-in-out{
+    position: absolute;
+    right: 15em;
+    top: 1.2em;
+    color: #404553;
+    font-weight: 500;
+    font-family: "Open Sans", sans-serif;
+}
+
+.sign-in-word{
+    color: #37A000;
+
+}
+.content-custom{
+    margin-top: 2em;
+}
+.input-customize{
+    border-left-color: white;
+    border-right-color: white;
+    border-top-color: white;
+    margin-top: 0.5em;
+}
+.welcom-back{
+    font-size: 1.6vw;
+    color: #404553;
+    font-weight: 600;
+
+    width: 220px;
+    margin-left: 4.5em;
+    font-family: Roboto, Sans-Serif;
+    display: inline-block;
+}
+
+input{
+    padding-left: 0.6em;
+    font-family: 'Roboto', sans-serif;
+}
+.btn-submit{
+    margin-top: 1em;
+    width: 390px;
+    height: 44px;
+    background-color: #37A000;
+    color: white;
+    font-size: 1.1em;
+    font-family: Aton, Sans-Serif;
+    font-weight: 500;
+    border-radius: 0px;
+    margin-bottom: 1em;
+}
+.btn-submit:hover{
+    background-color: #3C9522;
+    color: white;
+}
+.input-title{
+    font-size: 1.2vw;
+    color: black;
+    font-family: Roboto, Sans-Serif;
+    margin-top: 0.5em;
+    font-weight: 500;
+}
+.smile-img{
+ position: relative;
+    left: 22px;
+    top: -0.2em;
+}
+
+.sign-in-to-your-account{
+    font-size: 1.8vw;
+    color: #404553;
+    font-weight: 600;
+    margin-top: 0.5em;
+    margin-left: 3.2em;
+    font-family: Roboto, Sans-Serif;
+}
+.forget-password{
+    font-size: 1vw;
+    color: #37A000;
+    font-weight: 500;
+    margin-top: 0.5em;
+    font-family: Roboto, Sans-Serif;
+}
+.dont-have-account{
+    font-size: 1.1vw;
+    font-family: Roboto, Sans-Serif;
+    font-weight: 600;
+    text-align: center;
+}
+.sign-up{
+    color: #37A000 !important;
+}
+/*****************
+
+
+
+
+
+
+
+
+
+**************************/
+@media (max-width: 450px) {
+    .navbar-img{
+        margin-left: 0em;
+        height: 26px;
+    }
+    .language{
+        right: 0em;
+    }
+    .sign-in-to-your-account{
+        font-size: 4.2vw;
+        color: #404553;
+        font-weight: 600;
+        margin-top: 0.3em;
+        margin-left: 4.25em;
+        font-family: Roboto, Sans-Serif;
+    }
+    .welcom-back{
+        font-size:5vw;
+        color: #404553;
+        font-weight: 600;
+        width: 220px;
+        margin-left: 3.5em;
+        font-family: Roboto, Sans-Serif;
+    }
+    .smile-img{
+        height:35px;
+        width: 35px;
+        position: relative;
+        left: 10px;
+        top: -0.2em;
+    }
+    .input-customize{
+        border-left-color: white;
+        border-right-color: white;
+        border-top-color: white;
+        margin-top: 0.5em;
+        width: 100%;
+    }
+    .input-title{
+        font-size: 3.6vw;
+        color: black;
+    }
+    .btn-submit{
+        width: 100%;
+
+    }
+    .dont-have-account{
+        font-size: 2.8vw;
+        font-family: Roboto, Sans-Serif;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+/*****************
+
+
+
+
+
+
+
+
+
+**************************/
+
+@media (max-width: 350px) {
+
+    .language{
+        font-size: 3vw;
+    }
+    .navbar-img{
+        height: 20px;
+    }
+
+}

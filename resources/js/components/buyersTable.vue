@@ -11,7 +11,7 @@
             <input type="text" class="form-control-sm" placeholder="Total Amount "v-model="totalAmount">
             <div class="float-right">
                 <button type="button" class=" btn text-white"
-                       style="background-color: #37a000;" @click="searchbuyer">
+                        style="background-color: #37a000;" @click="searchbuyer">
                     <b-icon-search></b-icon-search> Search</button>
             </div>
         </form>
@@ -129,33 +129,33 @@
                             </div>
                         </div>
                         <hr>
-                            <div class="row">
+                        <div class="row">
 
-                                <div class="col">
-                                    <label>City
-                                        <input type="text" class="form-control" placeholder="City" v-model="buyerO.city">
-                                    </label>
-                                    <div v-if="errors.city" class="alert-danger">{{errors.city[0]}}</div>
-                                </div>
-                                <div class="col">
-                                    <label>Area
-                                        <input type="text" class="form-control" placeholder="Area" v-model="buyerO.area">
-                                    </label>
-                                    <div v-if="errors.area" class="alert-danger">{{errors.area[0]}}</div>
-                                </div>
-                                <div class="col">
-                                    <label>Street
-                                        <input type="text" class="form-control" placeholder="Street" v-model="buyerO.street">
-                                    </label>
-                                    <div v-if="errors.street" class="alert-danger">{{errors.street[0]}}</div>
-                                </div>
-                                <div class="col">
-                                    <label>Building Number
-                                        <input type="text" class="form-control" placeholder="Building Number" v-model="buyerO.buildingNumber">
-                                    </label>
-                                    <div v-if="errors.buildingNumber" class="alert-danger">{{errors.buildingNumber[0]}}</div>
-                                </div>
+                            <div class="col">
+                                <label>City
+                                    <input type="text" class="form-control" placeholder="City" v-model="buyerO.city">
+                                </label>
+                                <div v-if="errors.city" class="alert-danger">{{errors.city[0]}}</div>
                             </div>
+                            <div class="col">
+                                <label>Area
+                                    <input type="text" class="form-control" placeholder="Area" v-model="buyerO.area">
+                                </label>
+                                <div v-if="errors.area" class="alert-danger">{{errors.area[0]}}</div>
+                            </div>
+                            <div class="col">
+                                <label>Street
+                                    <input type="text" class="form-control" placeholder="Street" v-model="buyerO.street">
+                                </label>
+                                <div v-if="errors.street" class="alert-danger">{{errors.street[0]}}</div>
+                            </div>
+                            <div class="col">
+                                <label>Building Number
+                                    <input type="text" class="form-control" placeholder="Building Number" v-model="buyerO.buildingNumber">
+                                </label>
+                                <div v-if="errors.buildingNumber" class="alert-danger">{{errors.buildingNumber[0]}}</div>
+                            </div>
+                        </div>
                         <hr>
                         <div class="row">
                             <div class="col">
@@ -169,10 +169,10 @@
                             </div>
                         </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button  type="submit" class="btn btn-success">Update</button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button  type="submit" class="btn btn-success">Update</button>
+                        </div>
                     </form>
 
                 </div>
@@ -240,24 +240,24 @@
             },
             deleteBuyer(id) {
                 fetch('/api/admin/buyers/'+id, {
-                        method: 'delete'
+                    method: 'delete'
+                })
+                    .then(data => {
+                        this.fetchBuyers();
+                        $("#deleteModal").modal( 'hide' ).data( 'bs.modal', null );
+                        $( '.modal-backdrop' ).remove();
+                        this.makeToast(
+                            'success',
+                            'The buyer [ '+this.buyerO.name+' ] was deleted',
+                            'Delete successfully');
                     })
-                        .then(data => {
-                            this.fetchBuyers();
-                            $("#deleteModal").modal( 'hide' ).data( 'bs.modal', null );
-                            $( '.modal-backdrop' ).remove();
-                            this.makeToast(
-                                'success',
-                                'The buyer [ '+this.buyerO.name+' ] was deleted',
-                                'Delete successfully');
-                        })
-                        .catch(err => {
-                            this.makeToast(
-                                'danger',
-                                'An error occurred, process did not complete',
-                                '');
-                            console.log(err)
-                        });
+                    .catch(err => {
+                        this.makeToast(
+                            'danger',
+                            'An error occurred, process did not complete',
+                            '');
+                        console.log(err)
+                    });
             },
             editBuyer(buyer){
                 this.buyerO.id=buyer.id;
@@ -296,12 +296,12 @@
                 fetch('/api/admin/searchBuyer', {
                     method:'POST',
                     body: JSON.stringify([{
-                            name: this.name,
-                            email: this.email,
-                            idNumber: this.idNumber,
-                            phone: this.phone,
-                            totalAmount: this.totalAmount,
-                        }]),
+                        name: this.name,
+                        email: this.email,
+                        idNumber: this.idNumber,
+                        phone: this.phone,
+                        totalAmount: this.totalAmount,
+                    }]),
                     headers:{
                         'content-type': 'application/json'
                     }
@@ -326,5 +326,4 @@
 </script>
 
 <style scoped>
-
 </style>
