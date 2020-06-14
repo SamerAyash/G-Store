@@ -9,9 +9,9 @@ import registerComponent from './components/registerComponent';
 
 const routes = [
     { path: '/admin/acounts-table',name:'buyersTable', component: BuyersTable },
-    { path: '/sellers',name:'sellersTable', component: SellersTable },
-    { path: '/supervisors',name:'supervisorsTable', component: supervisorsTable },
-    { path: '/delivery',name:'deliverysTable', component: deliverysTable },
+    { path: '/admin/acounts-table#/sellers',name:'sellersTable', component: SellersTable },
+    { path: '/admin/acounts-table#/supervisors',name:'supervisorsTable', component: supervisorsTable },
+    { path: '/admin/acounts-table#/delivery',name:'deliverysTable', component: deliverysTable },
     { path: '/admin/outstanding-products-and-offers',name:'productsTable', component: ProductsTable },
     { path: '/admin/outstanding-products-and-offers#/offers',name:'offersTable', component: OffersTable },
     //////////////////////////////////////////////////////////////////////////////

@@ -327,7 +327,7 @@ a{
     font-weight: 500;
     padding: 7px;
     font-family: Roboto, Sans-Serif;
-}
+}/*
 .we-are{
     margin-left: 5em;
     display: flex;
@@ -346,7 +346,7 @@ a{
     font-family: Roboto, Sans-Serif;
     font-size: 0.9em;
     margin-top: 5px;
-}
+}*/
 .img-conatact{
     width: 36px;
     height: 36px;
@@ -361,7 +361,7 @@ a{
     margin-left: 6em;
     margin-top: 1em;
 }
-.word-of-contact{
+/*.word-of-contact{
     display: flex;
     flex-direction: column;
     margin-left: 1em;
@@ -377,13 +377,13 @@ a{
     font-weight: 600;
     font-family: Roboto, Sans-Serif;
     color: #404553;
-}
+}*/
 .second-contact{
     display: flex;
     flex-direction: row;
     margin-left: 0em;
     margin-top: 1em;
-}
+}/*
 .whatsapp{
     margin-left: 1em;
     font-size: 1.1em;
@@ -391,7 +391,7 @@ a{
     font-family: Roboto, Sans-Serif;
     color: #404553;
     margin-top: 5px;
-}
+}*/
 .who-we-are-box{
     margin-left: 4.8em;
 }
@@ -414,7 +414,7 @@ footer{
     font-size: 1.1em;
 
 }
-.input-email{
+/*.input-email{
     margin-top: 0.5em;
 }
 .email-word{
@@ -440,7 +440,7 @@ footer{
 .submit-email:hover{
     background-color: #37A000;
     color: white;
-}
+}*/
 .download-our{
     text-align: center;
     font-size: 1.1em;
@@ -977,7 +977,7 @@ footer{
         margin-top: 0px;
         margin-left: 20px;
     }
-    .we-are{
+    /*.we-are{
         margin-left: 10px;
         display: flex;
         flex-direction: column;
@@ -995,7 +995,7 @@ footer{
         font-family: Roboto, Sans-Serif;
         font-size: 0.6em;
         margin-top: 5px;
-    }
+    }*/
     .img-conatact{
         height: 30px !important;
         border-radius: 40%;
@@ -1009,7 +1009,7 @@ footer{
         margin-left: 15px;
         margin-top: 1em;
         margin-bottom: 1em;
-    }
+    }/*
     .word-of-contact{
         display: flex;
         flex-direction: column;
@@ -1021,27 +1021,27 @@ footer{
         font-size: 0.4em;
         color: #7E859B;
         width: 150%;
-    }
+    }*//*
     .lower-contact{
         font-size: 0.5em;
         font-weight: 600;
         font-family: Roboto, Sans-Serif;
         color: #404553;
-    }
+    }*/
     .second-contact{
         display: flex;
         flex-direction: row;
         margin-left:30px;
         margin-top: 1em;
     }
-    .whatsapp{
+    /*.whatsapp{
         margin-left:7px;
         font-size: 0.4em;
         font-weight: 600;
         font-family: Roboto, Sans-Serif;
-        color: #404553;
+        color: white;
         margin-top: 8px;
-    }
+    }*/
     .img-contact-custom{
         width: 16px;
         height: 16px;

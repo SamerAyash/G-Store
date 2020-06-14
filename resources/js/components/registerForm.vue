@@ -26,7 +26,7 @@
 
             </div>
             <div class="col">
-                <label for="phone" class="text-muted" style="margin-right: 90%;">Phone (059/056)</label>
+                <label for="phone" class="text-muted" style="margin-right: 60%;">Phone (059/056)</label>
                 <input id="phone" v-model="user.phone" name="phone" type="number" maxlength="10" placeholder="phone number" class="form-control">
                 <small v-if="this.errors.phone" class="text-danger">{{this.errors.phone[0]}}</small>
             </div>
@@ -103,9 +103,9 @@
     export default {
         name: "registerForm",
         props:['seller'],
-        computed:{
-            is_seller(){
-              this.user.is_seller =this.seller;
+        watch:{
+            seller:function (val) {
+                this.user.is_seller= val;
             }
         },
         data(){

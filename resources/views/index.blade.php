@@ -104,147 +104,28 @@
     <div class="col-md-12">
         <div id="carouselExampleControls"  class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-         <div class="carousel-item active">
-        <div class="row">
+                @for($i=0; $i< count($recommended);$i=$i+6)
 
-            <div class="col-md-2 col-2 first-slider-item product-inside">
-                <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-            <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-            <div class="col-md-2 col-2 first-slider-item product-inside">
-                <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-            <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-            <div class="col-md-2 col-2 first-slider-item product-inside">
-                <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-           <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-              <div class="col-md-2 col-2 first-slider-item product-inside">
-                  <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-              <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-
-              </div>
-
-             <div class="col-md-2 col-2 first-slider-item product-inside">
-                 <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-            <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-            <div class="col-md-2 col-2 first-slider-item product-inside">
-                <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-             <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-        </div>
-
-    </div>
-         <div class="carousel-item ">
-       <div class="row" >
-             <div class="col-md-2 col-2 first-slider-item product-inside">
-                 <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-            <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-            <div class="col-md-2 col-2 first-slider-item product-inside">
-                <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-            <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-            <div class="col-md-2 col-2 first-slider-item product-inside">
-                <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-           <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-              <div class="col-md-2 col-2 first-slider-item product-inside">
-                  <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-              <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-
-              </div>
-
-             <div class="col-md-2 col-2 first-slider-item product-inside">
-                 <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-            <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-            <div class="col-md-2 col-2 first-slider-item product-inside">
-                <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-             <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-       </div>
-    </div>
-         <div class="carousel-item ">
-         <div class="row" >
-             <div class="col-md-2 col-2 first-slider-item product-inside">
-                 <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-            <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-            <div class="col-md-2 col-2 first-slider-item product-inside">
-                <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-            <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-            <div class="col-md-2 col-2 first-slider-item product-inside">
-                <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-           <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-              <div class="col-md-2 col-2 first-slider-item product-inside">
-                  <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-              <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-
-              </div>
-
-             <div class="col-md-2 col-2 first-slider-item product-inside">
-                 <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-            <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-
-            <div class="col-md-2 col-2 first-slider-item product-inside">
-                <img class="d-block w-100 product-img-slider" src="{{asset('assets/img/fourth.jpg')}}"  alt="First slide">
-           <div class="product-name">Apple iphone 11 Pro Max with faceTime Black</div>
-               <div class="product-price"><div class="nis">NIS</div><div class="price-num">120</div><del class="price-del">NIS 140</del></div>
-             <div class="green-card"><div class="green-card-in">34% OFF</div></div>
-           </div>
-         </div>
-
-    </div>
+                        <div class="carousel-item @if($i==0) active @else  @endif">
+                        <div class="row">
+                            @for($y=$i;$y<+$i+6;$y++)
+                                <div class="col-md-2 col-2 first-slider-item product-inside">
+                                                    <a href="{{route('product',$recommended[$y]->id)}}">
+                                    <img class="d-block w-100 product-img-slider" src="{{asset('images/products/'.$recommended[$y]->mainImage)}}">
+                                <div class="product-name">{{$recommended[$y]->title}}</div>
+                                @if($recommended[$y]->offer)
+                                                            <div class="product-price"><div class="nis">NIS</div><div class="price-num">{{$recommended[$y]->priceAfterOffer()}}</div><del class="price-del">NIS
+                                {{$recommended[$y]->price}}</del></div>
+                                                            <div class="green-card"><div class="green-card-in">{{$recommended[$y]->offer->discount}}% OFF</div></div>
+                                                        @else
+                                                            <div class="product-price"><div class="nis">NIS</div><div class="price-num">{{$recommended[$y]->price}}</div></div>
+                                                        @endif
+                                                                                </a>
+                                                            </div>
+                                @endfor
+                                    </div>
+                                </div>
+                @endfor
 
   </div>
   <a class="carousel-control-prev prev-control-product" href="#carouselExampleControls"  role="button" data-slide="prev">

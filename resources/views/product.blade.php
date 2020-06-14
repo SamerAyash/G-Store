@@ -77,8 +77,5 @@
 
 @push('scripts')
      <script src="{{mix('js/app.js')}}"></script>
-     <script>
-          $('#showImage').elevateZoom();
-     </script>
 @endpush
 

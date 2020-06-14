@@ -50,7 +50,7 @@ class HomeController extends Controller
             ->where('isHidden','=',0)
             ->inRandomOrder()->distinct()
             ->select('id','title','price','mainImage')
-            ->take('21');
+            ->take('18')->get();
         ////////////////////////////////////////////////////////////
         $favoritePros = Product::orderByDesc('rate')
             ->orderByDesc('ratingCount')
@@ -71,7 +71,7 @@ class HomeController extends Controller
             })
             ->where('isAccept','=',1)
             ->where('isHidden','=',0)
-            ->take(6)->get();
+            ->take(12)->get();
         ////////////////////////////////////////////////////////////
         $mobiles  = Product::with(['offer'=>function($q){
             $q->addSelect('discount','product_id');
@@ -84,7 +84,7 @@ class HomeController extends Controller
             })
             ->where('isAccept','=',1)
             ->where('isHidden','=',0)
-            ->take(6)->get();
+            ->take(12)->get();
         ////////////////////////////////////////////////////////////
         $electronics  = Product::with(['offer'=>function($q){
             $q->addSelect('discount','product_id');
@@ -97,7 +97,7 @@ class HomeController extends Controller
             })
             ->where('isAccept','=',1)
             ->where('isHidden','=',0)
-            ->take(6)->get();
+            ->take(12)->get();
         ////////////////////////////////////////////////////////////
         $beauty  = Product::with(['offer'=>function($q){
             $q->addSelect('discount','product_id');
@@ -110,7 +110,7 @@ class HomeController extends Controller
             })
             ->where('isAccept','=',1)
             ->where('isHidden','=',0)
-            ->take(6)->get();
+            ->take(12)->get();
         ////////////////////////////////////////////////////////////
         $sport  = Product::with(['offer'=>function($q){
             $q->addSelect('discount','product_id');
@@ -123,7 +123,7 @@ class HomeController extends Controller
             })
             ->where('isAccept','=',1)
             ->where('isHidden','=',0)
-            ->take(6)->get();
+            ->take(12)->get();
         ////////////////////////////////////////////////////////////
         $home  = Product::with(['offer'=>function($q){
             $q->addSelect('discount','product_id');
@@ -136,7 +136,7 @@ class HomeController extends Controller
             })
             ->where('isAccept','=',1)
             ->where('isHidden','=',0)
-            ->take(6)->get();
+            ->take(12)->get();
         ////////////////////////////////////////////////////////////
         $offers =Offer::with('product')
             ->whereHas('product',function($q){
@@ -239,7 +239,7 @@ class HomeController extends Controller
         ]);
         if (auth('web')->attempt(['email' => request('email'), 'password' => request('password')], 1)) {
             if (auth()->user()->type == 'buyer') {
-                return route('index');
+                return route('home');
             }
             if (auth()->user()->type == 'seller') {
                 return route('home');
@@ -259,12 +259,12 @@ class HomeController extends Controller
                 'password'=>'required|string',
                 'id_number'=>'required|numeric|digits:10',
                 'phone'=>'required|numeric|digits:10|regex:/(05[96])[0-9]/|unique:users',
-                'city'=>'required|string',
+                'city'=>'required|string|in:gaza,dair al balah,maghazi,zuwaida,nuseirat,khan younes,rafah',
                 'area'=>'required|string',
                 'street'=>'required|string',
                 'building_number'=>'required|numeric',
                 'birth_date'=>'required|date',
-                'gender'=>'required|string',
+                'gender'=>'required|string|in:male,female',
                 'shop_name'=>'required|string|unique:users,shopName',
             ]);
             $address=address::create([
@@ -286,7 +286,7 @@ class HomeController extends Controller
                 $seller->type='seller';
             $seller->save();
             \auth('web')->attempt(['email' => $request->email, 'password' => $request->password]);
-            return response()->json(route('index'));
+            return response()->json(route('home'));
         }
         else if (!$request->input('is_seller')){
             $this->validate($request,[
@@ -296,12 +296,12 @@ class HomeController extends Controller
                 'password'=>'required|string',
                 'id_number'=>'required|numeric|digits:10',
                 'phone'=>'required|numeric|digits:10|regex:/(05[96])[0-9]/|unique:users',
-                'city'=>'required|string',
+                'city'=>'required|string|in:gaza,dair al balah,maghazi,zuwaida,nuseirat,khan younes,rafah',
                 'area'=>'required|string',
                 'street'=>'required|string',
                 'building_number'=>'required|numeric',
                 'birth_date'=>'required|date',
-                'gender'=>'required|string',
+                'gender'=>'required|string|in:male,female',
             ]);
             $address=address::create([
                 'city'=>$request->input('city'),

@@ -7,14 +7,14 @@
         </div>
         <div class="row row-3">
             <div class="col">
-                <button class="nav-item nav-link notActive" @click="change"
+                <button class="nav-item nav-link notActive" @click="change(false)"
                         :class="(!this.seller)?'activeRoute':''" style="max-width: inherit">
                     Buyer
                 </button>
             </div>
             <div class="col"></div>
             <div class="col">
-                <button class="nav-item nav-link notActive" @click="change"
+                <button class="nav-item nav-link notActive" @click="change(true)"
                         :class="(this.seller)?'activeRoute':''">
                     Seller
                 </button>
@@ -46,8 +46,8 @@
             }
         },
         methods:{
-            change(){
-                this.seller= !this.seller;
+            change(status){
+                this.seller= status;
             }
         }
     }

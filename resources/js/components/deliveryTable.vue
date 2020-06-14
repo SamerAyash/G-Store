@@ -18,9 +18,9 @@
         <button type="button" @click="edit =false,deliveryO={}" class="btn btn-primary float-left" data-toggle="modal" data-target="#formModal"><i class="fas fa-plus"></i> Create delivery</button>
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-end">
-                <li v-bind:class="[{disabled: !pagination.prev_page_url}]" class="page-item"><a class="page-link" href="#" @click="fetchDeliverys(pagination.prev_page_url)">Previous</a></li>
+                <li v-bind:class="[{disabled: !pagination.prev_page_url}]" class="page-item"><a class="page-link" href="#" @click.prevent="fetchDeliverys(pagination.prev_page_url)">Previous</a></li>
                 <li class="page-item disabled"><a class="page-link text-dark" href="#">Page {{ pagination.current_page }} of {{ pagination.last_page }}</a></li>
-                <li v-bind:class="[{disabled: !pagination.next_page_url}]" class="page-item"><a class="page-link" href="#" @click="fetchDeliverys(pagination.next_page_url)">Next</a></li>
+                <li v-bind:class="[{disabled: !pagination.next_page_url}]" class="page-item"><a class="page-link" href="#" @click.prevent="fetchDeliverys(pagination.next_page_url)">Next</a></li>
             </ul>
         </nav>
         <table class="table table-striped">

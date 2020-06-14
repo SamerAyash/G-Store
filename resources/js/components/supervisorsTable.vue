@@ -10,7 +10,7 @@
             <input type="text" class="form-control-sm" placeholder="Phone" v-model="phone">
             <div class="float-right">
                 <button type="button" class=" btn text-white"
-                        style="background-color: #37a000;" @click="searchsupervisor">
+                        style="background-color: #37a000;" @click.prevent="searchsupervisor">
                     <b-icon-search></b-icon-search>Search</button>
             </div>
         </form>
@@ -18,9 +18,9 @@
         <button @click="edit =false,supervisorO={}" type="button" class="btn btn-primary float-left" data-toggle="modal" data-target="#formModal"><i class="fas fa-plus"></i> Create supervisor</button>
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-end">
-                <li v-bind:class="[{disabled: !pagination.prev_page_url}]" class="page-item"><a class="page-link" href="#" @click="fetchSupervisors(pagination.prev_page_url)">Previous</a></li>
+                <li v-bind:class="[{disabled: !pagination.prev_page_url}]" class="page-item"><a class="page-link" href="#" @click.prevent="fetchSupervisors(pagination.prev_page_url)">Previous</a></li>
                 <li class="page-item disabled"><a class="page-link text-dark" href="#">Page {{ pagination.current_page }} of {{ pagination.last_page }}</a></li>
-                <li v-bind:class="[{disabled: !pagination.next_page_url}]" class="page-item"><a class="page-link" href="#" @click="fetchSupervisors(pagination.next_page_url)">Next</a></li>
+                <li v-bind:class="[{disabled: !pagination.next_page_url}]" class="page-item"><a class="page-link" href="#" @click.prevent="fetchSupervisors(pagination.next_page_url)">Next</a></li>
             </ul>
         </nav>
         <table class="table table-striped">
