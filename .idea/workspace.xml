@@ -2,32 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="495c1560-5319-4f47-84ad-e7d02e13a518" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/+" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BuyerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/CartFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/cartComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/buyer/cart.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/OrderComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/buyer/order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/G-Store.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/G-Store.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_172911_create_carts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_172911_create_carts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CartSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CartSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BuyerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BuyerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_172940_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_172940_create_orders_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/buyersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/buyersTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/deliveryTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/deliveryTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/offerTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/offerTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/productsTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/productsTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/registerComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/registerComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/registerForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/registerForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/sellersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/sellersTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/supervisorsTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/supervisorsTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/cartComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/cartComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/productComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/productComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/buyer/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/buyer/cart.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,6 +132,7 @@
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/paypal/rest-api-sdk-php" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Y8MXmlX5SXuiHQa992POXxHqyX" />
@@ -158,7 +150,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/products" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PayPal" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -333,7 +325,8 @@
       <workItem from="1592030270348" duration="666000" />
       <workItem from="1592061931702" duration="3118000" />
       <workItem from="1592086558326" duration="7238000" />
-      <workItem from="1592126009250" duration="3170000" />
+      <workItem from="1592126009250" duration="20711000" />
+      <workItem from="1592169446993" duration="17309000" />
     </task>
     <servers />
   </component>
@@ -349,10 +342,10 @@
     </state>
     <state x="275" y="4" key="#Plugins/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1588388676529" />
     <state x="275" y="4" key="#Plugins/0.0.1366.728@0.0.1366.728" timestamp="1591730581278" />
-    <state x="446" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591887741898">
+    <state x="446" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592180710352">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="446" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1591887741898" />
+    <state x="446" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1592180710352" />
     <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591690533028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -375,9 +368,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="467" y="283" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1585001610284" />
-    <state x="474" y="160" key="FileChooserDialogImpl" timestamp="1589437715600">
+    <state x="474" y="160" key="FileChooserDialogImpl" timestamp="1592141023166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="474" y="160" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1592141023166" />
     <state x="474" y="160" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589437715600" />
     <state x="552" y="262" key="Github.ShareDialog" timestamp="1585008946162">
       <screen x="0" y="0" width="1366" height="728" />
@@ -395,15 +389,15 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1383" y="-14" width="920" height="521" maximized="true" key="dock-window-1/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1583674426619" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1591109562469">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1592181669987">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1591109562469" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1592181669987" />
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1587698502222" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592128904158">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592186421474">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1591900656914" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1592186421474" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1592128904158" />
   </component>
 </project>

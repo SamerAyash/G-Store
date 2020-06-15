@@ -19,8 +19,12 @@
         <button type="submit" class="search-icon"><i class="fa fa-search"></i></button>
     </form>
     @auth
+        <a href="{{route('order')}}" class="d-flex flex-row cart-custom" style="margin-top: -15px">
+            <div class="cart-text">
+                <img src="{{asset('assets/img/shopping-cart%20(2).png')}}" height="32px" width="32px" class="cart-img" alt="logo">
+            </div>
+        </a>
         <a href="{{route('cart')}}" class="d-flex flex-row cart-custom" >
-            <img src="{{asset('assets/img/shopping-cart%20(2).png')}}" height="32px" width="32px" class="cart-img" alt="logo">
             <div class="cart-text">
                 <div class="cart-num-div"> <div class="cart-num">{{auth('web')->user()->cart()->count()}}</div></div>
                 <div class="cart-word">cart</div>

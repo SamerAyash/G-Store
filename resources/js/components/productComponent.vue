@@ -131,10 +131,10 @@
             <hr class="row line-hr">
             <div class="row form-submit">
                 <form class="col-md-12">
-                    <div class="row">
+                    <div class="row" v-if="this.product.amount > 0">
                         <div class="d-flex flex-column col-md-3 col-3"><div class="quant">Quantity</div>
-                            <input v-if="this.product.amount > 0" class="form-control" type="number" min="1" :max="this.product.amount"  value="1"></div>
-                        <button class="btn btn-to-cart col-md-9 col-6">ADD TO CART</button>
+                            <input class="form-control" type="number" min="1" :max="this.product.amount" v-model="quantity"></div>
+                        <button @click.prevent="addToCart()" class="btn btn-to-cart col-md-9 col-6">ADD TO CART</button>
                     </div>
                 </form>
             </div>
@@ -212,6 +212,7 @@
         data(){
             return{
                 image:'',
+                quantity:1
             }
         },
         created() {
@@ -220,7 +221,40 @@
         methods:{
             changeImage(image){
                 this.image= image;
-            }
+            },
+            addToCart(){
+                axios.post('/addToCart/'+this.$props['product'].id,{
+                    'quantity':this.quantity
+                })
+                    .then(res => {
+                        if (res.data == 'error'){
+                            this.makeToast(
+                                'danger',
+                                'An error occurred, process did not complete',
+                                'Error');
+                        }
+                        else {
+                            this.makeToast(
+                                'success',
+                                'The product added to cart',
+                                'Add successfully');
+                        }
+                    })
+                    .catch(err => {
+                        this.makeToast(
+                            'danger',
+                            'An error occurred, process did not complete',
+                            'Error');
+                    });
+            },
+            makeToast(variant = null,message,title) {
+                this.$bvToast.toast(message, {
+                    title: title,
+                    variant: variant,
+                    solid: true,
+                    autoHideDelay:'1500',
+                })
+            },
         }
     }
 </script>

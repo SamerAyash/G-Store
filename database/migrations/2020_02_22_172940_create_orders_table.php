@@ -20,13 +20,14 @@ class CreateOrdersTable extends Migration
             $table->enum('status',['create','shipping','delivered','paid']);
             $table->enum('payment_type',['cash','credit']);
             $table->float('costs');
-            $table->float('paid_price');
-            $table->date('payment_time');
+            $table->integer('quantity');
+            $table->float('paid_price')->nullable();
+            $table->date('payment_time')->nullable();
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->unsignedBigInteger('buyer_id');
             $table->foreign('buyer_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('delivery_id');
+            $table->unsignedBigInteger('delivery_id')->nullable();
             $table->foreign('delivery_id')->references('id')->on('admins');
             $table->string('notes')->nullable();
             $table->timestamps();

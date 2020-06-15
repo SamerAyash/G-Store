@@ -17,6 +17,7 @@ Vue.component('requests-table',require('./components/requestsTable').default);
 Vue.component('product-component',require('./components/productComponent').default);
 Vue.component('register-component',require('./components/registerComponent').default);
 Vue.component('cart-component',require('./components/cartComponent').default);
+Vue.component('order-component',require('./components/OrderComponent').default);
 //////////////////////////////////////////////////////////////
 const router = new VueRouter({
     mode:'history',
